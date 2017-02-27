@@ -52,8 +52,17 @@ public class VoteServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Integer idpost = Integer.parseInt(request.getParameter("post"));
+        String c = request.getParameter("c");
         if (username == null) {
-            response.sendRedirect("login.jsp?post=" + idpost);
+            if(c==null)
+            {
+                 response.sendRedirect("login.jsp");
+            }
+            else
+            {
+                 response.sendRedirect("login.jsp?post=" + idpost);
+            }
+           
         } else {
             boolean pernah = false;
             Integer idvote = 0;

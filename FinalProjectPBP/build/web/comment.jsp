@@ -90,17 +90,17 @@
                 }
                 if (ada == false) {
         %>
-        <a href="VoteServlet?vote=1&post=<%=data.get(0).getIdPost()%>&comment=<%=temp.get(i).getIdComment()%>">[LIKE]</a>(<%=like%>)<a href="VoteServlet?vote=2&post=<%=data.get(0).getIdPost()%>&comment=<%=temp.get(i).getIdComment()%>">|[DISLIKE]</a>(<%=dislike%>)
+        <a href="VoteServlet?c=c&vote=1&post=<%=data.get(0).getIdPost()%>&comment=<%=temp.get(i).getIdComment()%>">[LIKE]</a>(<%=like%>)<a href="VoteServlet?c=c&vote=2&post=<%=data.get(0).getIdPost()%>&comment=<%=temp.get(i).getIdComment()%>">|[DISLIKE]</a>(<%=dislike%>)
         <%
         } else if (votes.get(j).getVote() == 1)//kalo votenya LIKE
         {
         %>
-        [LIKE (you already choose this)](<%=like%>)<a href="VoteServlet?vote=2&post=<%=data.get(0).getIdPost()%>&idvote=<%=votes.get(j).getIdVote()%>&comment=<%=temp.get(i).getIdComment()%>">|[DISLIKE]</a>(<%=dislike%>)
+        [LIKE (you already choose this)](<%=like%>)<a href="VoteServlet?c=c&vote=2&post=<%=data.get(0).getIdPost()%>&idvote=<%=votes.get(j).getIdVote()%>&comment=<%=temp.get(i).getIdComment()%>">|[DISLIKE]</a>(<%=dislike%>)
         <%
         } else if (votes.get(j).getVote() == 2)//kalo votenya DISLIKE
         {
         %>
-        <a href="VoteServlet?vote=1&post=<%=data.get(0).getIdPost()%>&idvote=<%=votes.get(j).getIdVote()%>&comment=<%=temp.get(i).getIdComment()%>">[LIKE]</a>(<%=like%>)|[DISLIKE(you already choose this)](<%=dislike%>)
+        <a href="VoteServlet?c=c&vote=1&post=<%=data.get(0).getIdPost()%>&idvote=<%=votes.get(j).getIdVote()%>&comment=<%=temp.get(i).getIdComment()%>">[LIKE]</a>(<%=like%>)|[DISLIKE(you already choose this)](<%=dislike%>)
         <%
             }
 
