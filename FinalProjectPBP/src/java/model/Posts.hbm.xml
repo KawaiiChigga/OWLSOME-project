@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 22, 2017 12:01:35 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Posts" table="posts" catalog="tugasbesarpbp" optimistic-lock="version">
+        <id name="idPost" type="java.lang.Integer">
+            <column name="id_post" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="users" class="model.Users" fetch="select">
+            <column name="id_user" not-null="true" />
+        </many-to-one>
+        <property name="title" type="string">
+            <column name="title" length="100" not-null="true" />
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="65535" not-null="true" />
+        </property>
+        <property name="postType" type="string">
+            <column name="post_type" length="30" not-null="true" />
+        </property>
+        <property name="postDate" type="timestamp">
+            <column name="post_date" length="19" not-null="true" />
+        </property>
+        <set name="commentses" table="comments" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_post" not-null="true" />
+            </key>
+            <one-to-many class="model.Comments" />
+        </set>
+        <set name="voteses" table="votes" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_post" not-null="true" />
+            </key>
+            <one-to-many class="model.Votes" />
+        </set>
+    </class>
+</hibernate-mapping>
