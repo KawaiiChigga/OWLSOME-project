@@ -12,16 +12,16 @@ public class Votes  implements java.io.Serializable {
      private Integer idVote;
      private Posts posts;
      private Users users;
-     private int idComment;
+     private Comments comments;
      private int vote;
 
     public Votes() {
     }
 
-    public Votes(Posts posts, Users users, int idComment, int vote) {
+    public Votes(Posts posts, Users users, Comments idComment, int vote) {
        this.posts = posts;
        this.users = users;
-       this.idComment = idComment;
+       this.comments = idComment;
        this.vote = vote;
     }
    
@@ -46,12 +46,12 @@ public class Votes  implements java.io.Serializable {
     public void setUsers(Users users) {
         this.users = users;
     }
-    public int getIdComment() {
-        return this.idComment;
+    public Comments getComments() {
+        return this.comments;
     }
     
-    public void setIdComment(int idComment) {
-        this.idComment = idComment;
+    public void setComments(Comments comments) {
+        this.comments = comments;
     }
     public int getVote() {
         return this.vote;

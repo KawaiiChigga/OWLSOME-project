@@ -133,6 +133,18 @@ public class DataAkses {
 
         return hasil;
     }
+        public ArrayList<Comments> getCommentt(int idcomment) {
+        Session session = factory.openSession();
+        ArrayList<Comments> hasil = null;
+        Transaction tx = session.beginTransaction();
+        Query q = session.createQuery("from Comments where id_comment= '" + idcomment + "'");
+        hasil = (ArrayList<Comments>) q.list();
+
+        tx.commit();
+        session.close();
+
+        return hasil;
+    }
 
     public boolean insertComment(Comments c) {
 
@@ -157,12 +169,11 @@ public class DataAkses {
 
         return hasil;
     }
-
     public ArrayList<Votes> getVoteComment(int idcomment) {
         Session session = factory.openSession();
         ArrayList<Votes> hasil = null;
         Transaction tx = session.beginTransaction();
-        Query q = session.createQuery("from Votes where idpost= '" + idcomment + "'");
+        Query q = session.createQuery("from Votes where id_comment= '" + idcomment + "'");
         hasil = (ArrayList<Votes>) q.list();
 
         tx.commit();
@@ -170,6 +181,8 @@ public class DataAkses {
 
         return hasil;
     }
+
+
 
     public boolean insertVote(Votes v) {
 

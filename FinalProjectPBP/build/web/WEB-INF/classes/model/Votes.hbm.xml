@@ -1,24 +1,23 @@
-<?xml version="1.0"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated Feb 22, 2017 12:01:35 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="model.Votes" table="votes" catalog="tugasbesarpbp" optimistic-lock="version">
-        <id name="idVote" type="java.lang.Integer">
-            <column name="id_vote" />
-            <generator class="identity" />
-        </id>
-        <many-to-one name="posts" class="model.Posts" fetch="select">
-            <column name="id_post" not-null="true" />
-        </many-to-one>
-        <many-to-one name="users" class="model.Users" fetch="select">
-            <column name="id_user" not-null="true" />
-        </many-to-one>
-        <property name="idComment" type="int">
-            <column name="id_comment" not-null="true" />
-        </property>
-        <property name="vote" type="int">
-            <column name="vote" not-null="true" />
-        </property>
-    </class>
+  <class catalog="tugasbesarpbp" name="model.Votes" optimistic-lock="version" table="votes">
+    <id name="idVote" type="java.lang.Integer">
+      <column name="id_vote"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="model.Posts" fetch="select" name="posts">
+      <column name="id_post" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="model.Users" fetch="select" name="users">
+      <column name="id_user" not-null="true"/>
+    </many-to-one>    
+    <many-to-one class="model.Comments" fetch="select" name="comments">
+      <column name="id_comment" not-null="true"/>
+    </many-to-one>
+    <property name="vote" type="int">
+      <column name="vote" not-null="true"/>
+    </property>
+  </class>
 </hibernate-mapping>

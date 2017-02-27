@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import model.Comments;
 import model.Posts;
 import model.Users;
 import model.Votes;
@@ -50,8 +51,9 @@ public class VoteServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
+        Integer idpost = Integer.parseInt(request.getParameter("post"));
         if (username == null) {
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("login.jsp?post=" + idpost);
         } else {
             boolean pernah = false;
             Integer idvote = 0;
@@ -61,30 +63,59 @@ public class VoteServlet extends HttpServlet {
             }
 
             Integer vote = Integer.parseInt(request.getParameter("vote"));
-            Integer idpost = Integer.parseInt(request.getParameter("post"));
+            Integer idcomment = 0;
+            if (request.getParameter("comment") != null) {
 
+                idcomment = Integer.parseInt(request.getParameter("comment"));
+            }
+            Votes v;
             DataAkses da = new DataAkses();
             ArrayList<Users> user = da.getUser(username);
-            ArrayList<Posts> post = da.getPost(idpost);
-            Votes v;
-            if (pernah) {
+            ArrayList<Posts> post = null;
+            ArrayList<Comments> comment = null;
+            if (idcomment == 0) {
 
-            if (da.updateVote(idvote, vote)) {
-                response.sendRedirect("home.jsp");
-            } else {
-
-                response.sendRedirect("home.jsp?status=votefail");
+                post = da.getPost(idpost);
             }
-                v = new Votes(post.get(0), user.get(0), idvote, vote);
-            } else {
+            else
+            {
+                comment = da.getCommentt(idcomment);
+            }
 
-                v = new Votes(post.get(0), user.get(0), 0, vote);
-                if (da.insertVote(v)) {
-                    response.sendRedirect("home.jsp");
+            if (pernah) {
+                if (da.updateVote(idvote, vote)) {
+                    if (idcomment != 0) {
+                        response.sendRedirect("comment.jsp?post=" + idpost);
+                    } else {
+
+                        response.sendRedirect("home.jsp");
+                    }
+
                 } else {
 
                     response.sendRedirect("home.jsp?status=votefail");
                 }
+
+            } else {
+                if (post == null) {
+                    v = new Votes(null, user.get(0), comment.get(0), vote);
+                } else {
+                    v = new Votes(post.get(0), user.get(0), null, vote);
+                }
+
+                if (da.insertVote(v)) {
+                    if (idcomment != 0) {
+                        response.sendRedirect("comment.jsp?post=" + idpost);
+                    } else {
+
+                        response.sendRedirect("home.jsp");
+                    }
+
+                } else {
+
+                    response.sendRedirect("home.jsp?status=votefail");
+                }
+
             }
         }
 

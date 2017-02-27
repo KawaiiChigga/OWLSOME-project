@@ -4,6 +4,8 @@
     Author     : Kevin
 --%>
 
+<%@page import="model.Users"%>
+<%@page import="model.Votes"%>
 <%@page import="model.Comments"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Collections"%>
@@ -17,6 +19,10 @@
         <title>Comment</title>
     </head>
     <body>
+        <%
+
+            String name = (String) session.getAttribute("username");
+        %>
         <%@ include file="header.jsp" %>
         <%            int idpost = -1;
             if (request.getParameter("post") != null) {
@@ -32,7 +38,7 @@
             Boolean available = true;
             DataAkses da = new DataAkses();
             ArrayList<Posts> data = da.getPost(idpost);
-
+            ArrayList<Users> u = da.getUser(name);
             if (data.isEmpty() || idpost == -1) {
                 available = false;
         %>
@@ -63,9 +69,48 @@
                 out.println("Isi Comment:  " + temp.get(i).getContent() + "<br><br><br>");
                 out.println("Date: " + temp.get(i).getCommentDate() + "<br><br><br>");
                 out.println("<hr>");
+
+                boolean ada = false;
+                ArrayList<Votes> votes = da.getVoteComment(temp.get(i).getIdComment());
+                int j = 0;
+                int like = 0, dislike = 0;
+
+                for (int k = 0; k < votes.size(); k++) {
+                    if (votes.get(k).getVote() == 1) {
+                        like++;
+                    } else {
+                        dislike++;
+                    }
+                    if (!u.isEmpty()) {
+                        if (votes.get(k).getUsers().getIdUser() == u.get(0).getIdUser()) {
+                            ada = true;
+                            j = k;
+                        }
+                    }
+                }
+                if (ada == false) {
+        %>
+        <a href="VoteServlet?vote=1&post=<%=data.get(0).getIdPost()%>&comment=<%=temp.get(i).getIdComment()%>">[LIKE]</a>(<%=like%>)<a href="VoteServlet?vote=2&post=<%=data.get(0).getIdPost()%>&comment=<%=temp.get(i).getIdComment()%>">|[DISLIKE]</a>(<%=dislike%>)
+        <%
+        } else if (votes.get(j).getVote() == 1)//kalo votenya LIKE
+        {
+        %>
+        [LIKE (you already choose this)](<%=like%>)<a href="VoteServlet?vote=2&post=<%=data.get(0).getIdPost()%>&idvote=<%=votes.get(j).getIdVote()%>&comment=<%=temp.get(i).getIdComment()%>">|[DISLIKE]</a>(<%=dislike%>)
+        <%
+        } else if (votes.get(j).getVote() == 2)//kalo votenya DISLIKE
+        {
+        %>
+        <a href="VoteServlet?vote=1&post=<%=data.get(0).getIdPost()%>&idvote=<%=votes.get(j).getIdVote()%>&comment=<%=temp.get(i).getIdComment()%>">[LIKE]</a>(<%=like%>)|[DISLIKE(you already choose this)](<%=dislike%>)
+        <%
             }
 
-            if (available) {
+     
+                out.println("<hr>");
+
+            }
+      
+
+        if (available) {
 
 
         %>
