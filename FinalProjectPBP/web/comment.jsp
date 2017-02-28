@@ -49,7 +49,7 @@
                 String nama = da.getUser(temp.getUsers().getIdUser()).get(0).getName();
 
                 out.println("<br><hr>");
-                out.println("Name: " + nama + "<br><br><br>");
+                out.println("<h3>" + nama + "</h3><br>");
                 out.println("Title: " + temp.getTitle() + "<br><br><br>");
                 out.println("Post Type: " + temp.getPostType() + "<br><br><br>");
                 out.println("Content: " + temp.getContent() + "<br><br><br>");
@@ -65,7 +65,7 @@
             for (int i = 0; i < temp.size(); i++) {
                 String nama = da.getUser(temp.get(i).getUsers().getIdUser()).get(0).getName();
                 out.println("<br>");
-                out.println("Name: " + nama + "<br><br><br>");
+                out.println("<h4>" + nama + "</h4><br>");
                 out.println("Isi Comment:  " + temp.get(i).getContent() + "<br><br><br>");
                 out.println("Date: " + temp.get(i).getCommentDate() + "<br><br><br>");
 
