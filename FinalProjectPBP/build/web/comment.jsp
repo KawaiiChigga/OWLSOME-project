@@ -68,7 +68,6 @@
                 out.println("Name: " + nama + "<br><br><br>");
                 out.println("Isi Comment:  " + temp.get(i).getContent() + "<br><br><br>");
                 out.println("Date: " + temp.get(i).getCommentDate() + "<br><br><br>");
-                out.println("<hr>");
 
                 boolean ada = false;
                 ArrayList<Votes> votes = da.getVoteComment(temp.get(i).getIdComment());
