@@ -16,8 +16,8 @@
 
             header, footer {
                 padding: 1em;
-                color: white;
-                background-color: black;
+                color: black;
+                background-color: #F6DF5A;
                 clear: left;
                 text-align: center;
             }
@@ -51,21 +51,20 @@
         <div class="container">
 
             <header>
+
                 
-                    <%
-                        String username = (String) session.getAttribute("username");
-                    %>
-                    <h1>INI FORUM</h1>
                 <%
-                    if (username == null){
-                        %>
-                        <h4>You must login or register first!</h4>
+                    String username = (String) session.getAttribute("username");
+                %>
+                <img src="owl.png">
                 <%
-                    }
-                    else
-                    {
-                        
-                        %>
+                    if (username == null) {
+                %>
+                <h4 style="font-family:Trebuchet MS; font-size:22px; color: #193149">Login First!</h4>
+                <%
+                } else {
+
+                %>
                 <h4>Welcome, <%=username%>!</h4>
                 <%
                     }
@@ -75,15 +74,17 @@
             <nav>
                 <ul>
 
-                    <li><a href="home.jsp">Home</a></li>
-
+                    <li><a style="font-family:Trebuchet MS; font-size:20px" href="home.jsp">HOME</a></li>
+                    <li><hr></li>
 
                     <%
-            if (username == null) {%>
-                    <li><a href="login.jsp">Login</a></li>
-                    <li><a href="register.jsp">Register</a></li>
+                        if (username == null) {%>
+                    <li><a style="font-family:Trebuchet MS; font-size:20px" href="login.jsp">LOGIN</a></li>
+                    <li><hr></li>
+                    <li><a style="font-family:Trebuchet MS; font-size:20px" href="register.jsp">REGISTER</a></li>
                         <% } else {%>
-                    <li><a href="LogoutServlet">Logout</a></li>
+                    <li><hr></li>
+                    <li><a style="font-family:Trebuchet MS; font-size:20px" href="LogoutServlet">LOGOUT</a></li>
 
                     <%}
                     %>

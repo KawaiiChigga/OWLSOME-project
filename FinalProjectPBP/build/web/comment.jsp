@@ -48,26 +48,26 @@
                 Posts temp = data.get(0);
                 String nama = da.getUser(temp.getUsers().getIdUser()).get(0).getName();
 
-                out.println("<br><hr>");
-                out.println("<h3>" + nama + "</h3><br>");
-                out.println("Title: " + temp.getTitle() + "<br><br><br>");
-                out.println("Post Type: " + temp.getPostType() + "<br><br><br>");
-                out.println("Content: " + temp.getContent() + "<br><br><br>");
-                out.println("Date: " + temp.getPostDate() + "<br><br><br>");
+                out.print("<span style='font-family:Trebuchet MS; color: #193149'><br><hr>");
+                out.print("<h2>" + nama + "</h2>");
+                out.print("<p style='font-size:20px;'>===== " + temp.getTitle() + " =====</p>");
+                out.print("<p style='font-size:14px;'> " + temp.getContent() + "</p>");
+                out.print("<p style='font-size:11px;'> Post Type: " + temp.getPostType() + " | Date: " + temp.getPostDate() +"</p><br><br>");
+                out.println("<hr></span>");
 
-                out.println("<hr>");
+
             }
             ArrayList<Comments> temp = da.getComment(idpost);
             if (available) {
         %>
-        <h2>Comments(<%=temp.size()%>) :</h2><%
+        <%
             }
             for (int i = 0; i < temp.size(); i++) {
                 String nama = da.getUser(temp.get(i).getUsers().getIdUser()).get(0).getName();
-                out.println("<br>");
-                out.println("<h4>" + nama + "</h4><br>");
-                out.println("Isi Comment:  " + temp.get(i).getContent() + "<br><br><br>");
-                out.println("Date: " + temp.get(i).getCommentDate() + "<br><br><br>");
+                out.print("<span style='font-family:Trebuchet MS;color: #193149'>");
+                out.print("<h3>" + nama + "</h3>");
+                out.print("<p style='font-size:14px;'>" + temp.get(i).getContent() + "</p>");
+                out.print("<p style='font-size:11px;'>Date: " + temp.get(i).getCommentDate() + "</p><br></span>");
 
                 boolean ada = false;
                 ArrayList<Votes> votes = da.getVoteComment(temp.get(i).getIdComment());
@@ -89,22 +89,23 @@
                 }
                 if (ada == false) {
         %>
-        <a href="VoteServlet?c=c&vote=1&post=<%=data.get(0).getIdPost()%>&comment=<%=temp.get(i).getIdComment()%>">[LIKE]</a>(<%=like%>)<a href="VoteServlet?c=c&vote=2&post=<%=data.get(0).getIdPost()%>&comment=<%=temp.get(i).getIdComment()%>">|[DISLIKE]</a>(<%=dislike%>)
+        <span style='font-family:Trebuchet MS; font-size:16px; color: #193149'>
+        <a  href="VoteServlet?c=c&vote=1&post=<%=data.get(0).getIdPost()%>&comment=<%=temp.get(i).getIdComment()%>">LIKE</a>(<%=like%>)<a href="VoteServlet?c=c&vote=2&post=<%=data.get(0).getIdPost()%>&comment=<%=temp.get(i).getIdComment()%>">|DISLIKE</a>(<%=dislike%>)
         <%
         } else if (votes.get(j).getVote() == 1)//kalo votenya LIKE
         {
         %>
-        [LIKE (you already choose this)](<%=like%>)<a href="VoteServlet?c=c&vote=2&post=<%=data.get(0).getIdPost()%>&idvote=<%=votes.get(j).getIdVote()%>&comment=<%=temp.get(i).getIdComment()%>">|[DISLIKE]</a>(<%=dislike%>)
+        LIKE (you already choose this)(<%=like%>)<a href="VoteServlet?c=c&vote=2&post=<%=data.get(0).getIdPost()%>&idvote=<%=votes.get(j).getIdVote()%>&comment=<%=temp.get(i).getIdComment()%>"> | DISLIKE</a>(<%=dislike%>)
         <%
         } else if (votes.get(j).getVote() == 2)//kalo votenya DISLIKE
         {
         %>
-        <a href="VoteServlet?c=c&vote=1&post=<%=data.get(0).getIdPost()%>&idvote=<%=votes.get(j).getIdVote()%>&comment=<%=temp.get(i).getIdComment()%>">[LIKE]</a>(<%=like%>)|[DISLIKE(you already choose this)](<%=dislike%>)
+        <a  href="VoteServlet?c=c&vote=1&post=<%=data.get(0).getIdPost()%>&idvote=<%=votes.get(j).getIdVote()%>&comment=<%=temp.get(i).getIdComment()%>">LIKE</a>(<%=like%>)|DISLIKE(you already choose this)(<%=dislike%>)
         <%
             }
 
      
-                out.println("<hr>");
+                out.println("<hr></span>");
 
             }
       
@@ -115,12 +116,13 @@
         %>
 
         <form action="CommentServlet?post=<%=idpost%>" id="commentform" method="post">
-
+            <span style='font-family:Trebuchet MS; font-size:20px; color: #193149'>
             Your Comment:
             <textarea rows="4" cols="50" name="isicomment" form="commentform" required></textarea><br>
 
 
             <input type="submit">
+            </span>
         </form>
         <%}%>
         <%@ include file="footer.jsp" %>

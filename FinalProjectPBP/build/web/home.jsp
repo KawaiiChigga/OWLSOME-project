@@ -70,7 +70,7 @@
                     <td><input  type="radio" name="type" value="games" checked/><span style="font-family:Trebuchet MS; font-size:20px">Games</span>
                         <input  type="radio" name="type" value="education" /><span style="font-family:Trebuchet MS; font-size:20px">Education  </span>
                         <input  type="radio" name="type" value="lifestyle" /><span style="font-family:Trebuchet MS; font-size:20px">Lifestyle</span>
-                        <input style=" background-color:#193149; color:white; font-family:tahoma; font-size:18px; margin-left: 10px" type="submit">
+                        <input style=" background-color:#193149; color:white; font-family:tahoma; font-size:18px; margin-left: 10px" value="Upload" type="submit">
                     </td>
 
 
@@ -101,12 +101,11 @@
                 String nama = da.getUser(temp.getUsers().getIdUser()).get(0).getName();
                 ArrayList<Comments> comments = da.getComment(temp.getIdPost());
 
-                out.println("<br><hr>");
-                out.println("<h3>" + nama + "</h3><br>");
-                out.println("Title: " + temp.getTitle() + "<br><br><br>");
-                out.println("Post Type: " + temp.getPostType() + "<br><br><br>");
-                out.println("Content: " + temp.getContent() + "<br><br><br>");
-                out.println("Date: " + temp.getPostDate() + "<br><br><br>");
+                out.print("<span style='font-family:Trebuchet MS; color: #193149'><br><hr>");
+                out.print("<h2>" + nama + "</h2>");
+                out.print("<p style='font-size:20px;'>===== " + temp.getTitle() + " =====</p>");
+                out.print("<p style='font-size:14px;'> " + temp.getContent() + "</p>");
+                out.print("<p style='font-size:11px;'> Post Type: " + temp.getPostType() + " | Date: " + temp.getPostDate() +"</p><br><br></span>");
 
                 boolean ada = false;
                 ArrayList<Votes> votes = da.getVotePost(temp.getIdPost());
@@ -129,24 +128,25 @@
                 }
                 if (ada == false) {
         %>
-        <a href="VoteServlet?vote=1&post=<%=temp.getIdPost()%>">[LIKE]</a>(<%=like%>)<a href="VoteServlet?vote=2&post=<%=temp.getIdPost()%>">|[DISLIKE]</a>(<%=dislike%>)
+        <span style='font-family:Trebuchet MS; font-size:16px; color: #193149'>
+        <a href="VoteServlet?vote=1&post=<%=temp.getIdPost()%>">LIKE</a>(<%=like%>)<a href="VoteServlet?vote=2&post=<%=temp.getIdPost()%>">|DISLIKE</a>(<%=dislike%>)
         <%
         } else if (votes.get(j).getVote() == 1)//kalo votenya LIKE
         {
         %>
-        [LIKE (you already choose this)](<%=like%>)<a href="VoteServlet?vote=2&idvote=<%=votes.get(j).getIdVote()%>&post=<%=temp.getIdPost()%>">|[DISLIKE]</a>(<%=dislike%>)
+        LIKE (you already choose this)(<%=like%>)<a href="VoteServlet?vote=2&idvote=<%=votes.get(j).getIdVote()%>&post=<%=temp.getIdPost()%>">|DISLIKE</a>(<%=dislike%>)
         <%
         } else if (votes.get(j).getVote() == 2)//kalo votenya DISLIKE
         {
         %>
-        <a href="VoteServlet?vote=1&idvote=<%=votes.get(j).getIdVote()%>&post=<%=temp.getIdPost()%>">[LIKE]</a>(<%=like%>)|[DISLIKE(you already choose this)](<%=dislike%>)
+        <a href="VoteServlet?vote=1&idvote=<%=votes.get(j).getIdVote()%>&post=<%=temp.getIdPost()%>">LIKE</a>(<%=like%>)|DISLIKE(you already choose this)(<%=dislike%>)
         <%
             }
 
         %>
         <br><br><a href="comment.jsp?post=<%=temp.getIdPost()%>">Comments (<%=comments.size()%>)</a>
         <%
-                out.println("<hr>");
+                out.println("<hr> </span>");
 
             }
         %>

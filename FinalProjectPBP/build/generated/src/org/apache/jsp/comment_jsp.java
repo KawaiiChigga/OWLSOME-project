@@ -3,16 +3,15 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import model.Users;
 import model.Votes;
 import model.Comments;
-import java.util.Collections;
-import java.util.Collection;
-import model.Posts;
-import model.Users;
 import java.util.ArrayList;
+import java.util.Collections;
+import model.Posts;
 import controller.DataAkses;
 
-public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class comment_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -55,30 +54,29 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Home</title>\n");
-      out.write("    </head>\n");
-      out.write("    <body>\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <title>Comment</title>\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>\r\n");
       out.write("        ");
 
 
             String name = (String) session.getAttribute("username");
         
-      out.write("\n");
+      out.write("\r\n");
       out.write("        ");
       out.write("\n");
       out.write("\n");
@@ -186,94 +184,65 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </nav>\n");
       out.write("\n");
       out.write("            <article>\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("        <script src=jquery-1.11.3.min.js></script>\n");
-      out.write("\n");
-      out.write("        <script>\n");
-      out.write("            $(document).ready(function () {\n");
-      out.write("\n");
-      out.write("                $(\"#postform\").hide();\n");
-      out.write("\n");
-      out.write("                $(\"#button1\").click(function () {\n");
-      out.write("                    $(\"#postform\").toggle(750);\n");
-      out.write("                });\n");
-      out.write("            });\n");
-      out.write("        </script>\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("        <form action=\"PostServlet\" id=\"postform\" method=\"post\">\n");
-      out.write("            <table>\n");
-      out.write("                <tr>\n");
-      out.write("                    <td><p style=\"font-family:Trebuchet MS; font-size:22px; color: #193149\">\n");
-      out.write("                            <b>TITLE</b> </p>\n");
-      out.write("                    </td>\n");
-      out.write("                    <td><input type=\"text\" name=\"title\" required \n");
-      out.write("                               style=\"font-size: 22px; margin-left: 10px\">\n");
-      out.write("                    </td>\n");
-      out.write("\n");
-      out.write("                </tr>\n");
-      out.write("                <tr>\n");
-      out.write("                    <td><p style=\"font-family:Trebuchet MS; font-size:22px; color: #193149\">\n");
-      out.write("                            <b>CONTENT</b> </p>\n");
-      out.write("                    </td>\n");
-      out.write("                    <td>\n");
-      out.write("                        <textarea rows=\"5\" cols=\"100\" name=\"isipost\" form=\"postform\" required style=\"margin-left: 10px\"></textarea>\n");
-      out.write("                    </td>\n");
-      out.write("                </tr>\n");
-      out.write("\n");
-      out.write("                <tr>\n");
-      out.write("                    <td><p style=\"font-family:Trebuchet MS; font-size:22px; color: #193149\">\n");
-      out.write("                            <b>TYPE</b> </p>\n");
-      out.write("                    </td>\n");
-      out.write("                    \n");
-      out.write("                    <td><input  type=\"radio\" name=\"type\" value=\"games\" checked/><span style=\"font-family:Trebuchet MS; font-size:20px\">Games</span>\n");
-      out.write("                        <input  type=\"radio\" name=\"type\" value=\"education\" /><span style=\"font-family:Trebuchet MS; font-size:20px\">Education  </span>\n");
-      out.write("                        <input  type=\"radio\" name=\"type\" value=\"lifestyle\" /><span style=\"font-family:Trebuchet MS; font-size:20px\">Lifestyle</span>\n");
-      out.write("                        <input style=\" background-color:#193149; color:white; font-family:tahoma; font-size:18px; margin-left: 10px\" value=\"Upload\" type=\"submit\">\n");
-      out.write("                    </td>\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("                </tr>\n");
-      out.write("\n");
-      out.write("            </table>\n");
-      out.write("        </form>\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("        <button id=\"button1\"> \n");
-      out.write("            Show & Hide \n");
-      out.write("        </button>\n");
-      out.write("\n");
+      out.write("\r\n");
       out.write("        ");
-            DataAkses da = new DataAkses();
-            ArrayList<Posts> data = new ArrayList<Posts>();
-            data = da.getAllPost();
-            Collections.reverse(data);
-            ArrayList<Users> u = da.getUser(name);
+            int idpost = -1;
+            if (request.getParameter("post") != null) {
+                idpost = Integer.parseInt(request.getParameter("post"));
+
+            }
 
         
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("        <h1>POST idnya= ");
+      out.print(idpost);
+      out.write("</h1>\r\n");
+      out.write("\r\n");
       out.write("        ");
-            for (int i = 0; i < data.size(); i++) {
-                Posts temp = data.get(i);
+
+            Boolean available = true;
+            DataAkses da = new DataAkses();
+            ArrayList<Posts> data = da.getPost(idpost);
+            ArrayList<Users> u = da.getUser(name);
+            if (data.isEmpty() || idpost == -1) {
+                available = false;
+        
+      out.write("\r\n");
+      out.write("        <h1>POST NOT FOUND!!!</h1>\r\n");
+      out.write("        ");
+
+            } else {
+                Posts temp = data.get(0);
                 String nama = da.getUser(temp.getUsers().getIdUser()).get(0).getName();
-                ArrayList<Comments> comments = da.getComment(temp.getIdPost());
 
                 out.print("<span style='font-family:Trebuchet MS; color: #193149'><br><hr>");
                 out.print("<h2>" + nama + "</h2>");
                 out.print("<p style='font-size:20px;'>===== " + temp.getTitle() + " =====</p>");
                 out.print("<p style='font-size:14px;'> " + temp.getContent() + "</p>");
-                out.print("<p style='font-size:11px;'> Post Type: " + temp.getPostType() + " | Date: " + temp.getPostDate() +"</p><br><br></span>");
+                out.print("<p style='font-size:11px;'> Post Type: " + temp.getPostType() + " | Date: " + temp.getPostDate() +"</p><br><br>");
+                out.println("<hr></span>");
+
+
+            }
+            ArrayList<Comments> temp = da.getComment(idpost);
+            if (available) {
+        
+      out.write("\r\n");
+      out.write("        <h2>Comments(");
+      out.print(temp.size());
+      out.write(") :</h2>");
+
+            }
+            for (int i = 0; i < temp.size(); i++) {
+                String nama = da.getUser(temp.get(i).getUsers().getIdUser()).get(0).getName();
+                out.print("<span style='font-family:Trebuchet MS;color: #193149'><br>");
+                out.print("<h3>" + nama + "</h3><br>");
+                out.print("<p style='font-size:14px;'>" + temp.get(i).getContent() + "</p><br><br><br>");
+                out.print("<p style='font-size:11px;'>Date: " + temp.get(i).getCommentDate() + "</p><br><br><br></span>");
 
                 boolean ada = false;
-                ArrayList<Votes> votes = da.getVotePost(temp.getIdPost());
+                ArrayList<Votes> votes = da.getVoteComment(temp.get(i).getIdComment());
                 int j = 0;
                 int like = 0, dislike = 0;
 
@@ -284,7 +253,6 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
                         dislike++;
                     }
                     if (!u.isEmpty()) {
-
                         if (votes.get(k).getUsers().getIdUser() == u.get(0).getIdUser()) {
                             ada = true;
                             j = k;
@@ -293,65 +261,84 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
                 }
                 if (ada == false) {
         
-      out.write("\n");
-      out.write("        <span style='font-family:Trebuchet MS; font-size:16px; color: #193149'>\n");
-      out.write("        <a href=\"VoteServlet?vote=1&post=");
-      out.print(temp.getIdPost());
+      out.write("\r\n");
+      out.write("        <span style='font-family:Trebuchet MS; font-size:20px; color: #193149' >\r\n");
+      out.write("        <a  href=\"VoteServlet?c=c&vote=1&post=");
+      out.print(data.get(0).getIdPost());
+      out.write("&comment=");
+      out.print(temp.get(i).getIdComment());
       out.write("\">LIKE</a>(");
       out.print(like);
-      out.write(")<a href=\"VoteServlet?vote=2&post=");
-      out.print(temp.getIdPost());
-      out.write("\">|DISLIKE</a>(");
+      out.write(")<a href=\"VoteServlet?c=c&vote=2&post=");
+      out.print(data.get(0).getIdPost());
+      out.write("&comment=");
+      out.print(temp.get(i).getIdComment());
+      out.write("\">|[DISLIKE]</a>(");
       out.print(dislike);
-      out.write(")\n");
+      out.write(")\r\n");
       out.write("        ");
 
         } else if (votes.get(j).getVote() == 1)//kalo votenya LIKE
         {
         
-      out.write("\n");
-      out.write("        LIKE (you already choose this)(");
+      out.write("\r\n");
+      out.write("        [LIKE (you already choose this)](");
       out.print(like);
-      out.write(")<a href=\"VoteServlet?vote=2&idvote=");
+      out.write(")<a href=\"VoteServlet?c=c&vote=2&post=");
+      out.print(data.get(0).getIdPost());
+      out.write("&idvote=");
       out.print(votes.get(j).getIdVote());
-      out.write("&post=");
-      out.print(temp.getIdPost());
-      out.write("\">|DISLIKE</a>(");
+      out.write("&comment=");
+      out.print(temp.get(i).getIdComment());
+      out.write("\"> | DISLIKE</a>(");
       out.print(dislike);
-      out.write(")\n");
+      out.write(")\r\n");
       out.write("        ");
 
         } else if (votes.get(j).getVote() == 2)//kalo votenya DISLIKE
         {
         
-      out.write("\n");
-      out.write("        <a href=\"VoteServlet?vote=1&idvote=");
+      out.write("\r\n");
+      out.write("        <a  href=\"VoteServlet?c=c&vote=1&post=");
+      out.print(data.get(0).getIdPost());
+      out.write("&idvote=");
       out.print(votes.get(j).getIdVote());
-      out.write("&post=");
-      out.print(temp.getIdPost());
-      out.write("\">LIKE</a>(");
+      out.write("&comment=");
+      out.print(temp.get(i).getIdComment());
+      out.write("\">[LIKE]</a>(");
       out.print(like);
-      out.write(")|DISLIKE(you already choose this)(");
+      out.write(")|[DISLIKE(you already choose this)](");
       out.print(dislike);
-      out.write(")\n");
+      out.write(")\r\n");
       out.write("        ");
 
             }
 
-        
-      out.write("\n");
-      out.write("        <br><br><a href=\"comment.jsp?post=");
-      out.print(temp.getIdPost());
-      out.write("\">Comments (");
-      out.print(comments.size());
-      out.write(")</a>\n");
-      out.write("        ");
-
-                out.println("<hr> </span>");
+     
+                out.println("<hr></span>");
 
             }
+      
+
+        if (available) {
+
+
         
-      out.write("\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("        <form action=\"CommentServlet?post=");
+      out.print(idpost);
+      out.write("\" id=\"commentform\" method=\"post\">\r\n");
+      out.write("\r\n");
+      out.write("            Your Comment:\r\n");
+      out.write("            <textarea rows=\"4\" cols=\"50\" name=\"isicomment\" form=\"commentform\" required></textarea><br>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("            <input type=\"submit\">\r\n");
+      out.write("        </form>\r\n");
+      out.write("        ");
+}
+      out.write("\r\n");
       out.write("        ");
       out.write("\n");
       out.write("\n");
@@ -365,10 +352,9 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("</body>\n");
       out.write("</html>");
-      out.write("\n");
-      out.write("\n");
-      out.write("    </body>\n");
-      out.write("</html>\n");
+      out.write("\r\n");
+      out.write("    </body>\r\n");
+      out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
