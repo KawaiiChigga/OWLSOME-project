@@ -83,7 +83,7 @@
                     <li><hr></li>
                     <li><a style="font-family:Trebuchet MS; font-size:20px" href="register.jsp">REGISTER</a></li>
                         <% } else {%>
-                    <li><hr></li>
+                    <li></li>
                     <li><a style="font-family:Trebuchet MS; font-size:20px" href="LogoutServlet">LOGOUT</a></li>
 
                     <%}

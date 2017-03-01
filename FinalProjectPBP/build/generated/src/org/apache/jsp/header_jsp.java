@@ -41,112 +41,112 @@ public final class header_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <style>\n");
-      out.write("            div.container {\n");
-      out.write("                width: 100%;\n");
-      out.write("                border: 1px solid gray;\n");
-      out.write("            }\n");
-      out.write("\n");
-      out.write("            header, footer {\n");
-      out.write("                padding: 1em;\n");
-      out.write("                color: black;\n");
-      out.write("                background-color: #F6DF5A;\n");
-      out.write("                clear: left;\n");
-      out.write("                text-align: center;\n");
-      out.write("            }\n");
-      out.write("\n");
-      out.write("            nav {\n");
-      out.write("                float: left;\n");
-      out.write("                max-width: 160px;\n");
-      out.write("                margin: 0;\n");
-      out.write("                padding: 1em;\n");
-      out.write("            }\n");
-      out.write("\n");
-      out.write("            nav ul {\n");
-      out.write("                list-style-type: none;\n");
-      out.write("                padding: 0;\n");
-      out.write("            }\n");
-      out.write("\n");
-      out.write("            nav ul a {\n");
-      out.write("                text-decoration: none;\n");
-      out.write("            }\n");
-      out.write("\n");
-      out.write("            article {\n");
-      out.write("                margin-left: 170px;\n");
-      out.write("                border-left: 1px solid gray;\n");
-      out.write("                padding: 1em;\n");
-      out.write("                overflow: hidden;\n");
-      out.write("            }\n");
-      out.write("        </style>\n");
-      out.write("    </head>\n");
-      out.write("    <body>\n");
-      out.write("\n");
-      out.write("        <div class=\"container\">\n");
-      out.write("\n");
-      out.write("            <header>\n");
-      out.write("\n");
-      out.write("                \n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <style>\r\n");
+      out.write("            div.container {\r\n");
+      out.write("                width: 100%;\r\n");
+      out.write("                border: 1px solid gray;\r\n");
+      out.write("            }\r\n");
+      out.write("\r\n");
+      out.write("            header, footer {\r\n");
+      out.write("                padding: 1em;\r\n");
+      out.write("                color: black;\r\n");
+      out.write("                background-color: #F6DF5A;\r\n");
+      out.write("                clear: left;\r\n");
+      out.write("                text-align: center;\r\n");
+      out.write("            }\r\n");
+      out.write("\r\n");
+      out.write("            nav {\r\n");
+      out.write("                float: left;\r\n");
+      out.write("                max-width: 160px;\r\n");
+      out.write("                margin: 0;\r\n");
+      out.write("                padding: 1em;\r\n");
+      out.write("            }\r\n");
+      out.write("\r\n");
+      out.write("            nav ul {\r\n");
+      out.write("                list-style-type: none;\r\n");
+      out.write("                padding: 0;\r\n");
+      out.write("            }\r\n");
+      out.write("\r\n");
+      out.write("            nav ul a {\r\n");
+      out.write("                text-decoration: none;\r\n");
+      out.write("            }\r\n");
+      out.write("\r\n");
+      out.write("            article {\r\n");
+      out.write("                margin-left: 170px;\r\n");
+      out.write("                border-left: 1px solid gray;\r\n");
+      out.write("                padding: 1em;\r\n");
+      out.write("                overflow: hidden;\r\n");
+      out.write("            }\r\n");
+      out.write("        </style>\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>\r\n");
+      out.write("\r\n");
+      out.write("        <div class=\"container\">\r\n");
+      out.write("\r\n");
+      out.write("            <header>\r\n");
+      out.write("\r\n");
+      out.write("                \r\n");
       out.write("                ");
 
                     String username = (String) session.getAttribute("username");
                 
-      out.write("\n");
-      out.write("                <img src=\"owl.png\">\n");
+      out.write("\r\n");
+      out.write("                <img src=\"owl.png\">\r\n");
       out.write("                ");
 
                     if (username == null) {
                 
-      out.write("\n");
-      out.write("                <h4 style=\"font-family:Trebuchet MS; font-size:22px; color: #193149\">Login First!</h4>\n");
+      out.write("\r\n");
+      out.write("                <h4 style=\"font-family:Trebuchet MS; font-size:22px; color: #193149\">Login First!</h4>\r\n");
       out.write("                ");
 
                 } else {
 
                 
-      out.write("\n");
+      out.write("\r\n");
       out.write("                <h4>Welcome, ");
       out.print(username);
-      out.write("!</h4>\n");
+      out.write("!</h4>\r\n");
       out.write("                ");
 
                     }
                 
-      out.write("\n");
-      out.write("            </header>\n");
-      out.write("\n");
-      out.write("            <nav>\n");
-      out.write("                <ul>\n");
-      out.write("\n");
-      out.write("                    <li><a style=\"font-family:Trebuchet MS; font-size:20px\" href=\"home.jsp\">HOME</a></li>\n");
-      out.write("                    <li><hr></li>\n");
-      out.write("\n");
+      out.write("\r\n");
+      out.write("            </header>\r\n");
+      out.write("\r\n");
+      out.write("            <nav>\r\n");
+      out.write("                <ul>\r\n");
+      out.write("\r\n");
+      out.write("                    <li><a style=\"font-family:Trebuchet MS; font-size:20px\" href=\"home.jsp\">HOME</a></li>\r\n");
+      out.write("                    <li><hr></li>\r\n");
+      out.write("\r\n");
       out.write("                    ");
 
                         if (username == null) {
-      out.write("\n");
-      out.write("                    <li><a style=\"font-family:Trebuchet MS; font-size:20px\" href=\"login.jsp\">LOGIN</a></li>\n");
-      out.write("                    <li><hr></li>\n");
-      out.write("                    <li><a style=\"font-family:Trebuchet MS; font-size:20px\" href=\"register.jsp\">REGISTER</a></li>\n");
+      out.write("\r\n");
+      out.write("                    <li><a style=\"font-family:Trebuchet MS; font-size:20px\" href=\"login.jsp\">LOGIN</a></li>\r\n");
+      out.write("                    <li><hr></li>\r\n");
+      out.write("                    <li><a style=\"font-family:Trebuchet MS; font-size:20px\" href=\"register.jsp\">REGISTER</a></li>\r\n");
       out.write("                        ");
  } else {
-      out.write("\n");
-      out.write("                    <li><hr></li>\n");
-      out.write("                    <li><a style=\"font-family:Trebuchet MS; font-size:20px\" href=\"LogoutServlet\">LOGOUT</a></li>\n");
-      out.write("\n");
+      out.write("\r\n");
+      out.write("                    <li></li>\r\n");
+      out.write("                    <li><a style=\"font-family:Trebuchet MS; font-size:20px\" href=\"LogoutServlet\">LOGOUT</a></li>\r\n");
+      out.write("\r\n");
       out.write("                    ");
 }
                     
-      out.write("\n");
-      out.write("                </ul>\n");
-      out.write("            </nav>\n");
-      out.write("\n");
-      out.write("            <article>\n");
+      out.write("\r\n");
+      out.write("                </ul>\r\n");
+      out.write("            </nav>\r\n");
+      out.write("\r\n");
+      out.write("            <article>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
