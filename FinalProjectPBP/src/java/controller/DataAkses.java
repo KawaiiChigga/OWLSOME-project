@@ -97,7 +97,6 @@ public class DataAkses {
             user.setPassword(u.getPassword());
             session.update(user);
             tx.commit();
-            session.close();
             return true;
         } catch (HibernateException e) {
             if (tx != null) {
@@ -105,6 +104,7 @@ public class DataAkses {
             }
             e.printStackTrace();
         }
+        session.close();
              return false;
     }
 
