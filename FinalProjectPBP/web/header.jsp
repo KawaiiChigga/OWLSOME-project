@@ -52,23 +52,18 @@
 
             <header>
 
-                
+
                 <%
                     String username = (String) session.getAttribute("username");
                 %>
                 <img src="owl.png">
-                <%
-                    if (username == null) {
-                %>
-                <h4 style="font-family:Trebuchet MS; font-size:22px; color: #193149">Login First!</h4>
-                <%
-                } else {
+     
+                <form action="search.jsp" method="Post">
+                    Search :   
+                    <input type="text" name="keyword" required/>
+                    <input type="submit" value="Submit"/>
 
-                %>
-                <h4>Welcome, <%=username%>!</h4>
-                <%
-                    }
-                %>
+                </form>
             </header>
 
             <nav>
@@ -84,6 +79,8 @@
                     <li><a style="font-family:Trebuchet MS; font-size:20px" href="register.jsp">REGISTER</a></li>
                         <% } else {%>
                     <li></li>
+                    <li><a style="font-family:Trebuchet MS; font-size:20px" href="">@<%=username%></a></li>
+                     <li><hr></li>
                     <li><a style="font-family:Trebuchet MS; font-size:20px" href="LogoutServlet">LOGOUT</a></li>
 
                     <%}

@@ -76,7 +76,7 @@ public class PostServlet extends HttpServlet {
             Posts temp = new Posts(user.get(0), title, isipost, type, null);
 
             if (da.insertPosts(temp)) {
-                response.sendRedirect("home.jsp");
+                response.sendRedirect("home.jsp?type="+type);
             } else {
 
                 response.sendRedirect("home.jsp?status=postfail");

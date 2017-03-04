@@ -71,12 +71,15 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
       out.write("        <title>Home</title>\r\n");
+      out.write("\r\n");
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
       out.write("        ");
 
 
             String name = (String) session.getAttribute("username");
+
+
         
       out.write("\r\n");
       out.write("        ");
@@ -130,7 +133,7 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("            <header>\r\n");
       out.write("\r\n");
-      out.write("                \r\n");
+      out.write("\r\n");
       out.write("                ");
 
                     String username = (String) session.getAttribute("username");
@@ -157,6 +160,12 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
                     }
                 
       out.write("\r\n");
+      out.write("                <form action=\"search.jsp\" method=\"Post\">\r\n");
+      out.write("                    Search :   \r\n");
+      out.write("                    <input type=\"text\" name=\"keyword\" required/>\r\n");
+      out.write("                    <input type=\"submit\" value=\"Submit\"/>\r\n");
+      out.write("\r\n");
+      out.write("                </form>\r\n");
       out.write("            </header>\r\n");
       out.write("\r\n");
       out.write("            <nav>\r\n");
@@ -175,7 +184,7 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        ");
  } else {
       out.write("\r\n");
-      out.write("                    <li><hr></li>\r\n");
+      out.write("                    <li></li>\r\n");
       out.write("                    <li><a style=\"font-family:Trebuchet MS; font-size:20px\" href=\"LogoutServlet\">LOGOUT</a></li>\r\n");
       out.write("\r\n");
       out.write("                    ");
@@ -228,7 +237,7 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <td><p style=\"font-family:Trebuchet MS; font-size:22px; color: #193149\">\r\n");
       out.write("                            <b>TYPE</b> </p>\r\n");
       out.write("                    </td>\r\n");
-      out.write("                    \r\n");
+      out.write("\r\n");
       out.write("                    <td><input  type=\"radio\" name=\"type\" value=\"games\" checked/><span style=\"font-family:Trebuchet MS; font-size:20px\">Games</span>\r\n");
       out.write("                        <input  type=\"radio\" name=\"type\" value=\"education\" /><span style=\"font-family:Trebuchet MS; font-size:20px\">Education  </span>\r\n");
       out.write("                        <input  type=\"radio\" name=\"type\" value=\"lifestyle\" /><span style=\"font-family:Trebuchet MS; font-size:20px\">Lifestyle</span>\r\n");
@@ -244,23 +253,33 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("        <button id=\"button1\"> \r\n");
-      out.write("            Show & Hide \r\n");
+      out.write("            Post\r\n");
       out.write("        </button>\r\n");
       out.write("\r\n");
       out.write("        ");
-            DataAkses da = new DataAkses();
-            ArrayList<Posts> data = new ArrayList<Posts>();
-            data = da.getAllPost();
-            Collections.reverse(data);
-            ArrayList<Users> u = da.getUser(name);
+            if (request.getParameter("type") == null) {
 
         
       out.write("\r\n");
+      out.write("        <h1><a href=\"home.jsp?type=games\">GAMES</a></h1>\r\n");
+      out.write("        <h1><a href=\"home.jsp?type=education\">EDUCATION</a></h1>\r\n");
+      out.write("        <h1><a href=\"home.jsp?type=lifestyle\">LIFESTYLE</a></h1>\r\n");
+      out.write("        ");
+        } else {
+            String type = request.getParameter("type");
+            DataAkses da = new DataAkses();
+            ArrayList<Posts> data = new ArrayList<Posts>();
+            data = da.getAllPost(type);
+            if (data.isEmpty()) {
+        
       out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
+      out.write("        <h1>There is no Post(s) in this Category :'(</h1>\r\n");
       out.write("\r\n");
       out.write("        ");
+
+        } else {
+            Collections.reverse(data);
+            ArrayList<Users> u = da.getUser(name);
             for (int i = 0; i < data.size(); i++) {
                 Posts temp = data.get(i);
                 String nama = da.getUser(temp.getUsers().getIdUser()).get(0).getName();
@@ -270,7 +289,7 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
                 out.print("<h2>" + nama + "</h2>");
                 out.print("<p style='font-size:20px;'>===== " + temp.getTitle() + " =====</p>");
                 out.print("<p style='font-size:14px;'> " + temp.getContent() + "</p>");
-                out.print("<p style='font-size:11px;'> Post Type: " + temp.getPostType() + " | Date: " + temp.getPostDate() +"</p><br><br></span>");
+                out.print("<p style='font-size:11px;'> Post Type: " + temp.getPostType() + " | Date: " + temp.getPostDate() + "</p><br><br></span>");
 
                 boolean ada = false;
                 ArrayList<Votes> votes = da.getVotePost(temp.getIdPost());
@@ -295,7 +314,7 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
         
       out.write("\r\n");
       out.write("        <span style='font-family:Trebuchet MS; font-size:16px; color: #193149'>\r\n");
-      out.write("        <a href=\"VoteServlet?vote=1&post=");
+      out.write("            <a href=\"VoteServlet?vote=1&post=");
       out.print(temp.getIdPost());
       out.write("\">LIKE</a>(");
       out.print(like);
@@ -304,13 +323,13 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\">|DISLIKE</a>(");
       out.print(dislike);
       out.write(")\r\n");
-      out.write("        ");
+      out.write("            ");
 
-        } else if (votes.get(j).getVote() == 1)//kalo votenya LIKE
-        {
-        
+            } else if (votes.get(j).getVote() == 1)//kalo votenya LIKE
+            {
+            
       out.write("\r\n");
-      out.write("        LIKE (you already choose this)(");
+      out.write("            LIKE (you already choose this)(");
       out.print(like);
       out.write(")<a href=\"VoteServlet?vote=2&idvote=");
       out.print(votes.get(j).getIdVote());
@@ -319,13 +338,13 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\">|DISLIKE</a>(");
       out.print(dislike);
       out.write(")\r\n");
-      out.write("        ");
+      out.write("            ");
 
-        } else if (votes.get(j).getVote() == 2)//kalo votenya DISLIKE
-        {
-        
+            } else if (votes.get(j).getVote() == 2)//kalo votenya DISLIKE
+            {
+            
       out.write("\r\n");
-      out.write("        <a href=\"VoteServlet?vote=1&idvote=");
+      out.write("            <a href=\"VoteServlet?vote=1&idvote=");
       out.print(votes.get(j).getIdVote());
       out.write("&post=");
       out.print(temp.getIdPost());
@@ -334,23 +353,31 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write(")|DISLIKE(you already choose this)(");
       out.print(dislike);
       out.write(")\r\n");
-      out.write("        ");
+      out.write("            ");
 
-            }
+                }
 
-        
+            
       out.write("\r\n");
-      out.write("        <br><br><a href=\"comment.jsp?post=");
+      out.write("            <br><br><a href=\"comment.jsp?post=");
       out.print(temp.getIdPost());
       out.write("\">Comments (");
       out.print(comments.size());
       out.write(")</a>\r\n");
+      out.write("            ");
+
+                        out.println("<hr> </span>");
+
+                    }
+                }
+            
+      out.write("\r\n");
+      out.write("        </span>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("        ");
-
-                out.println("<hr> </span>");
-
-            }
-        
+}
+      out.write("\r\n");
       out.write("\r\n");
       out.write("        ");
       out.write("\n");

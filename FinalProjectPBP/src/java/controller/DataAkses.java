@@ -96,6 +96,19 @@ public class DataAkses {
 
         return hasil;
     }
+    
+        public ArrayList<Posts> getAllPost(String post_type) {
+        Session session = factory.openSession();
+        ArrayList<Posts> hasil = null;
+        Transaction tx = session.beginTransaction();
+        Query q = session.createQuery("from Posts where post_type = '"+post_type+"'");
+        hasil = (ArrayList<Posts>) q.list();
+
+        tx.commit();
+        session.close();
+
+        return hasil;
+    }
 
     public ArrayList<Posts> getPost(int idpost) {
         Session session = factory.openSession();
@@ -110,6 +123,18 @@ public class DataAkses {
         return hasil;
     }
 
+       public ArrayList<Posts> searchPost(String keyword) {
+        Session session = factory.openSession();
+        ArrayList<Posts> hasil = null;
+        Transaction tx = session.beginTransaction();
+        Query q = session.createQuery("from Posts where title like '%" + keyword + "%' or content like '%" + keyword + "%'or post_type = '" + keyword + "'");
+        hasil = (ArrayList<Posts>) q.list();
+
+        tx.commit();
+        session.close();
+
+        return hasil;
+    }
     public boolean insertPosts(Posts p) {
 
         Session session = factory.openSession();
