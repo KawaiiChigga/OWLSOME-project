@@ -82,6 +82,30 @@ public class DataAkses {
         tx.commit();
         session.close();
         return true;
+    }    
+    public boolean updateUser(int id_user, Users u) {
+
+       Session session = factory.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            Users user = (Users) session.get(Users.class, id_user);
+            user.setUsername(u.getUsername());
+            user.setName(u.getName());
+            user.setAge(u.getAge());
+            user.setEmail(u.getEmail());
+            user.setPassword(u.getPassword());
+            session.update(user);
+            tx.commit();
+            session.close();
+            return true;
+        } catch (HibernateException e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+            e.printStackTrace();
+        }
+             return false;
     }
 
     public ArrayList<Posts> getAllPost() {
@@ -239,4 +263,5 @@ public class DataAkses {
             return true;
         }
     }
+
 }
