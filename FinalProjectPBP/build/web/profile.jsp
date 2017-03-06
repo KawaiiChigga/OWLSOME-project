@@ -20,29 +20,50 @@
         <%            if (request.getParameter("error") != null) {
                 int error = Integer.parseInt(request.getParameter("error"));
                 if (error == 1) {
-        %><h2>Password didnt match!</h2><%
+        %><h2>Wrong Old Password or New Password didnt match!</h2><%
         } else if (error == 2) {
         %><h2>Username Taken!</h2><%
                 }
             }
-
             String name = (String) session.getAttribute("username");
             if (name != null) {
                 DataAkses da = new DataAkses();
                 ArrayList<Users> user = da.getUser(name);
                 Users temp = user.get(0);
         %>
-        <form action="ProfileServlet" method="post">
-            Username: <input type="teks" name="username" value="<%=temp.getUsername()%>"/><br>
-            Nama: <input type="teks" name="nama" value="<%=temp.getName()%>"/><br>
-            Age: <input type="teks" name="age" value="<%=temp.getAge()%>"/><br>
-            Email: <input type="teks" name="email" value="<%=temp.getEmail()%>"/><br>
-            Password: <input type="password" name="pass" value="<%=temp.getPassword()%>"/><br>
-            Confirm Password: <input type="password" name="cpass" value="<%=temp.getPassword()%>"/><br>
 
-            <input type="submit" name="Submit" value="Save Profile"/>
-        </form>
+        <table style="font-family:Trebuchet MS; font-size:20px; color: #193149">
+            <tr>
+                <td><b> Username</b></td>
+                <td> &nbsp; &nbsp; &nbsp; </td>
+                <td><%=temp.getUsername()%> </td>
+            </tr>
+
+            <tr>
+                <td><b>Name</b></td>
+                <td> &nbsp; &nbsp; &nbsp; </td>
+                <td> <%=temp.getName()%> </td>
+            </tr>
+
+            <tr>
+                <td><b>Age</b></td>
+                <td> &nbsp; &nbsp; &nbsp; </td>
+                <td> <%=temp.getAge()%> </td>
+            </tr>
+            <tr>
+                <td><b> Email</b></td>
+                <td> &nbsp; &nbsp; &nbsp; </td>
+                <td> <%=temp.getEmail()%> </td>
+            </tr>
+
+            <tr>
+                <td><a href="editprofile.jsp"><input type="button" value="Edit Profile"/></a> </td>
+            </tr>
+        </table>
+
+
         <%}%>
         <%@ include file="footer.jsp" %>
     </body>
 </html>
+

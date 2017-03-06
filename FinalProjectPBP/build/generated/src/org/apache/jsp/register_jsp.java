@@ -3,11 +3,8 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import java.util.ArrayList;
-import model.Users;
-import controller.DataAkses;
 
-public final class profile_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -50,20 +47,16 @@ public final class profile_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("<!DOCTYPE html>\r\n");
-      out.write("<html>\r\n");
-      out.write("    <head>\r\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-      out.write("        <title>Profile</title>\r\n");
-      out.write("    </head>\r\n");
-      out.write("    <body>\r\n");
-      out.write("\r\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <title>Register</title>\n");
+      out.write("    </head>\n");
+      out.write("    <body>\n");
       out.write("        ");
       out.write("\r\n");
       out.write("\r\n");
@@ -124,9 +117,9 @@ public final class profile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <img src=\"owl.png\">\r\n");
       out.write("     \r\n");
       out.write("                <form action=\"search.jsp\" method=\"Post\">\r\n");
-      out.write("                    <span style=\"font-family:Trebuchet MS; font-size:20px; color: #193149\"><b>SEACRH : </b></span>  \r\n");
+      out.write("                    Search :   \r\n");
       out.write("                    <input type=\"text\" name=\"keyword\" required/>\r\n");
-      out.write("                    <input type=\"submit\" value=\"Submit\" style=\" background-color:#193149; color:white; font-family:tahoma; font-size:18px;\"/>\r\n");
+      out.write("                    <input type=\"submit\" value=\"Submit\"/>\r\n");
       out.write("\r\n");
       out.write("                </form>\r\n");
       out.write("            </header>\r\n");
@@ -162,57 +155,34 @@ public final class profile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </nav>\r\n");
       out.write("\r\n");
       out.write("            <article>\r\n");
-      out.write("\r\n");
-      out.write("        ");
-            String name = (String) session.getAttribute("username");
-            if (name != null) {
-                DataAkses da = new DataAkses();
-                ArrayList<Users> user = da.getUser(name);
-                Users temp = user.get(0);
-        
-      out.write("\r\n");
-      out.write("        \r\n");
-      out.write("        <table style=\"font-family:Trebuchet MS; font-size:20px; color: #193149\">\r\n");
-      out.write("            <tr>\r\n");
-      out.write("                <td><b> Username</b></td>\r\n");
-      out.write("                <td> &nbsp; &nbsp; &nbsp; </td>\r\n");
-      out.write("                <td>");
-      out.print(temp.getUsername());
-      out.write(" </td>\r\n");
-      out.write("            </tr>\r\n");
-      out.write("\r\n");
-      out.write("            <tr>\r\n");
-      out.write("                <td><b>Name</b></td>\r\n");
-      out.write("                <td> &nbsp; &nbsp; &nbsp; </td>\r\n");
-      out.write("                <td> ");
-      out.print(temp.getName());
-      out.write(" </td>\r\n");
-      out.write("            </tr>\r\n");
-      out.write("\r\n");
-      out.write("            <tr>\r\n");
-      out.write("                <td><b>Age</b></td>\r\n");
-      out.write("                <td> &nbsp; &nbsp; &nbsp; </td>\r\n");
-      out.write("                <td> ");
-      out.print(temp.getAge());
-      out.write(" </td>\r\n");
-      out.write("            </tr>\r\n");
-      out.write("            <tr>\r\n");
-      out.write("                <td><b> Email</b></td>\r\n");
-      out.write("                <td> &nbsp; &nbsp; &nbsp; </td>\r\n");
-      out.write("                <td> ");
-      out.print(temp.getEmail());
-      out.write(" </td>\r\n");
-      out.write("            </tr>\r\n");
-      out.write("\r\n");
-      out.write("            <tr>\r\n");
-      out.write("                <td><a href=\"editprofile.jsp\"><input type=\"button\" value=\"Edit Profile\"/></a> </td>\r\n");
-      out.write("            </tr>\r\n");
-      out.write("        </table>\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("        ");
-}
-      out.write("\r\n");
+      out.write("\n");
+      out.write("        <span style=\"font-family:Trebuchet MS; font-size:26px; color: #193149\"><b>REGISTER</b></span>\n");
+      out.write("        <hr><br><br>\n");
+      out.write("         \n");
+      out.write("        <form action=\"RegisterServlet\" method=\"Post\">\n");
+      out.write("               <table><tr>\n");
+      out.write("                       <td style=\"font-family:Trebuchet MS; font-size:20px; color: #193149\"><b>USERNAME : </b></td>\n");
+      out.write("                       <td><input type=\"text\" name=\"username\" required/></td>\n");
+      out.write("                </tr>\n");
+      out.write("                <tr>\n");
+      out.write("                    <td style=\"font-family:Trebuchet MS; font-size:20px; color: #193149\"><b>EMAIL : </b></td> \n");
+      out.write("                    <td><input type=\"email\" name=\"email\" required/></td></tr>\n");
+      out.write("                <tr><td style=\"font-family:Trebuchet MS; font-size:20px; color: #193149\"><b>PASSWORD : </b></td>\n");
+      out.write("                <td><input type=\"password\" name=\"password\" required /></td></tr>\n");
+      out.write("                <tr><td style=\"font-family:Trebuchet MS; font-size:20px; color: #193149\"><b>CONFIRM PASSWORD : </b></td>\n");
+      out.write("                <td><input type=\"password\" name=\"confirmpassword\" required/></td></tr>\n");
+      out.write("                <tr><td style=\"font-family:Trebuchet MS; font-size:20px; color: #193149\"><b>NAME : </b></td>\n");
+      out.write("                <td><input type=\"text\" name=\"name\" required/></td></tr>\n");
+      out.write("                <tr><td style=\"font-family:Trebuchet MS; font-size:20px; color: #193149\"><b>AGE : </b></td>\n");
+      out.write("                <td><input type=\"text\" name=\"age\" required/></td></tr>\n");
+      out.write("                <tr><td style=\"font-family:Trebuchet MS; font-size:20px; color: #193149\"><b>GENDER : </b></td>\n");
+      out.write("                <td style=\"font-family:Trebuchet MS; font-size:20px; color: #193149\"><b><input type=\"radio\" name=\"gender\" value=\"male\" checked> Male\n");
+      out.write("                        <input type=\"radio\" name=\"gender\" value=\"female\"> Female</b></td></tr>\n");
+      out.write("                <tr><td><br><input type=\"submit\" value=\"Submit\" style=\" background-color:#193149; color:white; font-family:tahoma; font-size:18px;\"/>\n");
+      out.write("                <a href=\"login.jsp\"><input type=\"button\" value=\"Cancel\" style=\" background-color:#193149; color:white; font-family:tahoma; font-size:18px;\" /></a></td></tr>\n");
+      out.write("           </table>\n");
+      out.write("        </form>\n");
+      out.write("    \n");
       out.write("        ");
       out.write("\n");
       out.write("\n");
@@ -226,10 +196,9 @@ public final class profile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("</body>\n");
       out.write("</html>");
-      out.write("\r\n");
-      out.write("    </body>\r\n");
-      out.write("</html>\r\n");
-      out.write("\r\n");
+      out.write("\n");
+      out.write("    </body>\n");
+      out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

@@ -3,11 +3,8 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import java.util.ArrayList;
-import model.Users;
-import controller.DataAkses;
 
-public final class profile_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -50,20 +47,16 @@ public final class profile_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("<!DOCTYPE html>\r\n");
-      out.write("<html>\r\n");
-      out.write("    <head>\r\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-      out.write("        <title>Profile</title>\r\n");
-      out.write("    </head>\r\n");
-      out.write("    <body>\r\n");
-      out.write("\r\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <title>Login</title>\n");
+      out.write("    </head>\n");
+      out.write("    <body>\n");
       out.write("        ");
       out.write("\r\n");
       out.write("\r\n");
@@ -162,57 +155,67 @@ public final class profile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </nav>\r\n");
       out.write("\r\n");
       out.write("            <article>\r\n");
-      out.write("\r\n");
-      out.write("        ");
-            String name = (String) session.getAttribute("username");
-            if (name != null) {
-                DataAkses da = new DataAkses();
-                ArrayList<Users> user = da.getUser(name);
-                Users temp = user.get(0);
+      out.write("\n");
+      out.write("        <span style=\"font-family:Trebuchet MS; font-size:26px; color: #193149\"><b>LOGIN</b></span>\n");
+      out.write("        <hr><br><br>\n");
+      out.write("        \n");
+      out.write("          ");
+
+              
+            String status = request.getParameter("status");
+            
+            int idpost;
+            if(request.getParameter("post")!=null){
+                idpost = Integer.parseInt(request.getParameter("post"));
+            }
+            else
+            {
+                idpost = -1;
+            }
+            if (status != null) {
+                if (status.equals("1")) {
         
-      out.write("\r\n");
-      out.write("        \r\n");
-      out.write("        <table style=\"font-family:Trebuchet MS; font-size:20px; color: #193149\">\r\n");
-      out.write("            <tr>\r\n");
-      out.write("                <td><b> Username</b></td>\r\n");
-      out.write("                <td> &nbsp; &nbsp; &nbsp; </td>\r\n");
-      out.write("                <td>");
-      out.print(temp.getUsername());
-      out.write(" </td>\r\n");
-      out.write("            </tr>\r\n");
-      out.write("\r\n");
-      out.write("            <tr>\r\n");
-      out.write("                <td><b>Name</b></td>\r\n");
-      out.write("                <td> &nbsp; &nbsp; &nbsp; </td>\r\n");
-      out.write("                <td> ");
-      out.print(temp.getName());
-      out.write(" </td>\r\n");
-      out.write("            </tr>\r\n");
-      out.write("\r\n");
-      out.write("            <tr>\r\n");
-      out.write("                <td><b>Age</b></td>\r\n");
-      out.write("                <td> &nbsp; &nbsp; &nbsp; </td>\r\n");
-      out.write("                <td> ");
-      out.print(temp.getAge());
-      out.write(" </td>\r\n");
-      out.write("            </tr>\r\n");
-      out.write("            <tr>\r\n");
-      out.write("                <td><b> Email</b></td>\r\n");
-      out.write("                <td> &nbsp; &nbsp; &nbsp; </td>\r\n");
-      out.write("                <td> ");
-      out.print(temp.getEmail());
-      out.write(" </td>\r\n");
-      out.write("            </tr>\r\n");
-      out.write("\r\n");
-      out.write("            <tr>\r\n");
-      out.write("                <td><a href=\"editprofile.jsp\"><input type=\"button\" value=\"Edit Profile\"/></a> </td>\r\n");
-      out.write("            </tr>\r\n");
-      out.write("        </table>\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
+      out.write("\n");
+      out.write("        <h3>Register Error, Please Check your Data!</h3>\n");
       out.write("        ");
-}
-      out.write("\r\n");
+
+        } else if (status.equals("2")) {
+        
+      out.write("\n");
+      out.write("        <h3>Login Failed!</h3>\n");
+      out.write("\n");
+      out.write("        ");
+
+        } else {
+        
+      out.write("\n");
+      out.write("        <h3>Login Berhasil!!</h3>\n");
+      out.write("        ");
+
+                }
+            }
+        
+      out.write("\n");
+      out.write("        \n");
+      out.write("        <form action=\"LoginServlet?post=");
+      out.print(idpost);
+      out.write("\" method=\"Post\">\n");
+      out.write("            <table>\n");
+      out.write("                <tr>\n");
+      out.write("                    <td style=\"font-family:Trebuchet MS; font-size:20px; color: #193149\"><b>Username</b></td>\n");
+      out.write("                    <td> <input type=\"text\" name=\"username\" required/> </td>\n");
+      out.write("                </tr>\n");
+      out.write("                <tr>\n");
+      out.write("                    <td style=\"font-family:Trebuchet MS; font-size:20px; color: #193149\"><b>Password</b></td>\n");
+      out.write("                    <td> <input type=\"password\" name=\"password\" required/> </td>\n");
+      out.write("                </tr>\n");
+      out.write("                \n");
+      out.write("                <tr>\n");
+      out.write("                    <td><br><input type=\"submit\" value=\"Submit\" style=\" background-color:#193149; color:white; font-family:tahoma; font-size:18px;\"/></td>\n");
+      out.write("                    <td><a href=\"register.jsp\"><input type=\"button\" value=\"Register\" style=\" background-color:#193149; color:white; font-family:tahoma; font-size:18px;\"/></a></td>    \n");
+      out.write("                </tr>\n");
+      out.write("            </table>\n");
+      out.write("            </form>\n");
       out.write("        ");
       out.write("\n");
       out.write("\n");
@@ -226,10 +229,9 @@ public final class profile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("</body>\n");
       out.write("</html>");
-      out.write("\r\n");
-      out.write("    </body>\r\n");
-      out.write("</html>\r\n");
-      out.write("\r\n");
+      out.write("\n");
+      out.write("    </body>\n");
+      out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

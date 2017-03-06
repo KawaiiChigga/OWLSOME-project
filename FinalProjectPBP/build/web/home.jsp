@@ -91,9 +91,9 @@
         <%            if (request.getParameter("type") == null) {
 
         %>
-        <h1><a href="home.jsp?type=games">GAMES</a></h1>
-        <h1><a href="home.jsp?type=education">EDUCATION</a></h1>
-        <h1><a href="home.jsp?type=lifestyle">LIFESTYLE</a></h1>
+        <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=games"><b>GAMES</b></a></h1>
+        <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=education"><b>EDUCATION</b></a></h1>
+        <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=lifestyle"><b>LIFESTYLE</b></a></h1>
         <%        } else {
             String type = request.getParameter("type");
             DataAkses da = new DataAkses();

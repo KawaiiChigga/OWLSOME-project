@@ -142,9 +142,9 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <img src=\"owl.png\">\r\n");
       out.write("     \r\n");
       out.write("                <form action=\"search.jsp\" method=\"Post\">\r\n");
-      out.write("                    Search :   \r\n");
+      out.write("                    <span style=\"font-family:Trebuchet MS; font-size:20px; color: #193149\"><b>SEACRH : </b></span>  \r\n");
       out.write("                    <input type=\"text\" name=\"keyword\" required/>\r\n");
-      out.write("                    <input type=\"submit\" value=\"Submit\"/>\r\n");
+      out.write("                    <input type=\"submit\" value=\"Submit\" style=\" background-color:#193149; color:white; font-family:tahoma; font-size:18px;\"/>\r\n");
       out.write("\r\n");
       out.write("                </form>\r\n");
       out.write("            </header>\r\n");
@@ -246,9 +246,9 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
 
         
       out.write("\r\n");
-      out.write("        <h1><a href=\"home.jsp?type=games\">GAMES</a></h1>\r\n");
-      out.write("        <h1><a href=\"home.jsp?type=education\">EDUCATION</a></h1>\r\n");
-      out.write("        <h1><a href=\"home.jsp?type=lifestyle\">LIFESTYLE</a></h1>\r\n");
+      out.write("        <h1><a style=\"font-family:Trebuchet MS; font-size:26px; color: #193149\" href=\"home.jsp?type=games\"><b>GAMES</b></a></h1>\r\n");
+      out.write("        <h1><a style=\"font-family:Trebuchet MS; font-size:26px; color: #193149\" href=\"home.jsp?type=education\"><b>EDUCATION</b></a></h1>\r\n");
+      out.write("        <h1><a style=\"font-family:Trebuchet MS; font-size:26px; color: #193149\" href=\"home.jsp?type=lifestyle\"><b>LIFESTYLE</b></a></h1>\r\n");
       out.write("        ");
         } else {
             String type = request.getParameter("type");
@@ -365,17 +365,17 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("        ");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("<!DOCTYPE html>\r\n");
-      out.write("</article>\r\n");
-      out.write("\r\n");
-      out.write("<footer>Copyright &copy; 1115006 | 1115008 | 1115038</footer>\r\n");
-      out.write("\r\n");
-      out.write("</div>\r\n");
-      out.write("\r\n");
-      out.write("</body>\r\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("</article>\n");
+      out.write("\n");
+      out.write("<footer>Copyright &copy; 1115006 | 1115008 | 1115038</footer>\n");
+      out.write("\n");
+      out.write("</div>\n");
+      out.write("\n");
+      out.write("</body>\n");
       out.write("</html>");
       out.write("\r\n");
       out.write("\r\n");

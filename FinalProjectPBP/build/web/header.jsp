@@ -59,9 +59,9 @@
                 <img src="owl.png">
      
                 <form action="search.jsp" method="Post">
-                    Search :   
+                    <span style="font-family:Trebuchet MS; font-size:20px; color: #193149"><b>SEACRH : </b></span>  
                     <input type="text" name="keyword" required/>
-                    <input type="submit" value="Submit"/>
+                    <input type="submit" value="Submit" style=" background-color:#193149; color:white; font-family:tahoma; font-size:18px;"/>
 
                 </form>
             </header>
