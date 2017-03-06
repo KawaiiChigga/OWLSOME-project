@@ -263,7 +263,4 @@ public class DataAkses {
             return true;
         }
     }
-    public static void main(String[] args) {
-        
-    }
 }
