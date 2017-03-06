@@ -63,17 +63,21 @@ public class LoginServlet extends HttpServlet {
         int idpost = Integer.parseInt(request.getParameter("post"));
         DataAkses da = new DataAkses();
         ArrayList<Users> u = da.getUser(username);
-
+        System.out.println("SAMPAH"+request.getParameter("type"));
         if (u.size() > 0) {
             if (password.equals(u.get(0).getPassword())) {
                 HttpSession session = request.getSession();
                 session.setAttribute("username", username);
-                if (idpost == -1) {
+                if (idpost == -1 && request.getParameter("type").equals("")) {
 
                     response.sendRedirect("home.jsp?status=1");
+                } else if (!request.getParameter("type").equals("")) {
+
+                    String type = request.getParameter("type");
+                    response.sendRedirect("home.jsp?type=" + type);
                 } else {
 
-                    response.sendRedirect("comment.jsp?post="+idpost);
+                    response.sendRedirect("comment.jsp?post=" + idpost);
                 }
 
                 //buat logout
