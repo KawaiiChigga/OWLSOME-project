@@ -22,10 +22,7 @@
     </head>
     <body>
         <%
-
             String name = (String) session.getAttribute("username");
-
-
         %>
         <%@ include file="header.jsp" %>
 
@@ -44,7 +41,7 @@
         </script>
 
 
-
+        <div style="margin-bottom :10px;">
         <form action="PostServlet" id="postform" method="post">
             <table>
                 <tr>
@@ -70,30 +67,109 @@
                             <b>TYPE</b> </p>
                     </td>
 
-                    <td><input  type="radio" name="type" value="games" checked/><span style="font-family:Trebuchet MS; font-size:20px">Games</span>
-                        <input  type="radio" name="type" value="education" /><span style="font-family:Trebuchet MS; font-size:20px">Education  </span>
-                        <input  type="radio" name="type" value="lifestyle" /><span style="font-family:Trebuchet MS; font-size:20px">Lifestyle</span>
+                    <td>
+                        <select name="type">
+                            <option value="games" style="font-family:Trebuchet MS; font-size:14px">Games</option>
+                            <option value="education" style="font-family:Trebuchet MS; font-size:14px">Education</option>
+                            <option value="lifestyle" style="font-family:Trebuchet MS; font-size:14px">Lifestyle</option>
+                            <option value="sport" style="font-family:Trebuchet MS; font-size:14px">Sport</option>
+                            <option value="coding" style="font-family:Trebuchet MS; font-size:14px">Coding</option>
+                            <option value="traveling" style="font-family:Trebuchet MS; font-size:14px">Traveling</option>
+                            <option value="economics" style="font-family:Trebuchet MS; font-size:14px">Economics</option>
+                            <option value="movies" style="font-family:Trebuchet MS; font-size:14px">Movies</option>
+                            <option value="otomotif" style="font-family:Trebuchet MS; font-size:14px">Otomotif</option>
+                            <option value="politics" style="font-family:Trebuchet MS; font-size:14px">Politics</option>
+                        </select>
+                    </td>
+                    
+                    <td>
                         <input style=" background-color:#193149; color:white; font-family:tahoma; font-size:18px; margin-left: 10px" value="Upload" type="submit">
                     </td>
-
-
-
                 </tr>
 
             </table>
         </form>
+            
 
-
-        <button id="button1"> 
-            Post
-        </button>
-
+        <button style=" width: 100%;height: 40px; background-color:#193149; color:whitesmoke; font-family:Trebuchet MS; font-size:20px;" id="button1">POST</button>
+        
+        </div>    
         <%            if (request.getParameter("type") == null) {
 
         %>
-        <h1><a href="home.jsp?type=games">GAMES</a></h1>
-        <h1><a href="home.jsp?type=education">EDUCATION</a></h1>
-        <h1><a href="home.jsp?type=lifestyle">LIFESTYLE</a></h1>
+        <style>
+            a {
+                text-decoration: none;
+                font-family:Trebuchet MS;
+                color: #193149;
+            }
+            .url {
+                width:100%; 
+                height: 70px; 
+                padding-top:1px;
+                text-align: center;
+                margin-bottom: 5px;
+            }
+        </style>
+        <a href="home.jsp?type=games">
+            <div class="url" style="background-color: #ffcc00">
+                <h1><b>GAMES</b></h1>
+            </div>
+        </a>
+        <a href="home.jsp?type=education">
+            <div class="url" style="background-color: #f9c806">
+                <h1><b>EDUCATION</b></h1>
+            </div>
+        </a>
+        <a href="home.jsp?type=lifestyle">
+            <div class="url" style="background-color: #f2c40d">
+                <h1><b>LIFESTYLE</b></h1>
+            </div>
+        </a>
+        <a href="home.jsp?type=sport">
+            <div class="url" style="background-color: #ecc113">
+                <h1><b>SPORT</b></h1>
+            </div>
+        </a>
+        <a href="home.jsp?type=coding">
+            <div class="url" style="background-color: #e6bd19">
+                <h1><b>CODING</b></h1>
+            </div>
+        </a>
+        <a href="home.jsp?type=traveling">
+            <div class="url" style="background-color: #dfb920">
+                <h1><b>TRAVELING</b></h1>
+            </div>
+        </a>
+        <a href="home.jsp?type=economics">
+            <div class="url" style="background-color: #d9b526">
+                <h1><b>ECONOMICS</b></h1>
+            </div>
+        </a>
+        <a href="home.jsp?type=movies">
+            <div class="url" style="background-color: #d2b12d">
+                <h1><b>MOVIES</b></h1>
+            </div>
+        </a>
+        <a href="home.jsp?type=otomotif">
+            <div class="url" style="background-color: #ccad33">
+                <h1><b>OTOMOTIF</b></h1>
+            </div>
+        </a>
+        <a href="home.jsp?type=politics">
+            <div class="url" style="background-color: #c6aa39">
+                <h1><b>POLITICS</b></h1>
+            </div>
+        </a>
+<!--        <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=education"><b>EDUCATION</b></a></h1>
+        <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=lifestyle"><b>LIFESTYLE</b></a></h1>
+        <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=sport"><b>SPORT</b></a></h1>
+        <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=coding"><b>CODING</b></a></h1>
+        <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=traveling"><b>TRAVELING</b></a></h1>
+        <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=economics"><b>ECONOMICS</b></a></h1>
+        <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=movies"><b>MOVIES</b></a></h1>
+        <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=otomotif"><b>OTOMOTIF</b></a></h1>
+        <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=politics"><b>POLITICS</b></a></h1>-->
         <%        } else {
             String type = request.getParameter("type");
             DataAkses da = new DataAkses();

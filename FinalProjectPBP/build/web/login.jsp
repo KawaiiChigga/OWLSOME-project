@@ -13,7 +13,9 @@
     </head>
     <body>
         <%@ include file="header.jsp" %>
-         <h1>Login!</h1>
+        <span style="font-family:Trebuchet MS; font-size:26px; color: #193149"><b>LOGIN</b></span>
+        <hr><br><br>
+        
           <%
               
             String status = request.getParameter("status");
@@ -45,14 +47,21 @@
         %>
         
         <form action="LoginServlet?post=<%=idpost%>" method="Post">
-            username        :   
-            <input type="text" name="username" required/><br>
-            password        :   
-            <input type="password" name="password" required/><br>
-            <br><br>
-            <input type="submit" value="Submit"/>
-          
-        <a href="register.jsp"><input type="button" value="Register"/></a>
+            <table>
+                <tr>
+                    <td style="font-family:Trebuchet MS; font-size:20px; color: #193149"><b>Username</b></td>
+                    <td> <input type="text" name="username" required/> </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Trebuchet MS; font-size:20px; color: #193149"><b>Password</b></td>
+                    <td> <input type="password" name="password" required/> </td>
+                </tr>
+                
+                <tr>
+                    <td><br><input type="submit" value="Submit" style=" background-color:#193149; color:white; font-family:tahoma; font-size:18px;"/></td>
+                    <td><br><a href="register.jsp"><input type="button" value="Register" style=" background-color:#193149; color:white; font-family:tahoma; font-size:18px;"/></a></td>    
+                </tr>
+            </table>
             </form>
         <%@ include file="footer.jsp" %>
     </body>

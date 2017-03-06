@@ -64,6 +64,7 @@ public class ProfileServlet extends HttpServlet {
         
         String username = request.getParameter("username");
         String password = request.getParameter("pass");
+        String opassword = request.getParameter("opass");
         String email = request.getParameter("email");
         String confirmpassword = request.getParameter("cpass");
         String name = request.getParameter("nama");
@@ -71,7 +72,20 @@ public class ProfileServlet extends HttpServlet {
         DataAkses da = new DataAkses();
         ArrayList<Users> u = da.getUser(usrname);
         Users user = u.get(0);
-        if (password.equals(confirmpassword)) {
+        System.out.println("o"+opassword);
+        System.out.println("p"+password);
+        System.out.println("u"+user.getPassword());
+        System.out.println("c"+confirmpassword);
+         if(password.equals("") && confirmpassword.equals("") && opassword.equals("")){
+             if (da.updateUser(user.getIdUser(), new Users(username, user.getPassword(), name, age, email, user.getGender(), "user", ""))) {
+
+                session.setAttribute("username", username);
+                response.sendRedirect("home.jsp");
+            } else {
+                response.sendRedirect("profile.jsp?error=2");
+            }
+        }
+        else if (opassword.equals(user.getPassword())&&password.equals(confirmpassword)) {
             if (da.updateUser(user.getIdUser(), new Users(username, password, name, age, email, user.getGender(), "user", ""))) {
 
                 session.setAttribute("username", username);
