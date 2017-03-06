@@ -96,8 +96,8 @@ public class VoteServlet extends HttpServlet {
                     if (idcomment != 0) {
                         response.sendRedirect("comment.jsp?post=" + idpost);
                     } else {
-
-                        response.sendRedirect("home.jsp");
+                        String type = request.getParameter("type");
+                        response.sendRedirect("home.jsp?type="+type);
                     }
 
                 } else {

@@ -80,17 +80,17 @@
             if (ada == false) {
         %>
         <span style='font-family:Trebuchet MS; font-size:16px; color: #193149'>
-            <a href="VoteServlet?c=c&vote=1&post=<%=temp.getIdPost()%>">LIKE</a>(<%=like%>)<a href="VoteServlet?vote=2&post=<%=temp.getIdPost()%>">|DISLIKE</a>(<%=dislike%>)
+            <a href="VoteServlet?type=<%=temp.getPostType()%>&c=c&vote=1&post=<%=temp.getIdPost()%>">LIKE</a>(<%=like%>)<a href="VoteServlet?type=<%=temp.getPostType()%>&vote=2&post=<%=temp.getIdPost()%>">|DISLIKE</a>(<%=dislike%>)
             <%
             } else if (votes.get(j).getVote() == 1)//kalo votenya LIKE
             {
             %>
-            LIKE (you already choose this)(<%=like%>)<a href="VoteServlet?c=c&vote=2&idvote=<%=votes.get(j).getIdVote()%>&post=<%=temp.getIdPost()%>">|DISLIKE</a>(<%=dislike%>)
+            LIKE (you already choose this)(<%=like%>)<a href="VoteServlet?type=<%=temp.getPostType()%>&c=c&vote=2&idvote=<%=votes.get(j).getIdVote()%>&post=<%=temp.getIdPost()%>">|DISLIKE</a>(<%=dislike%>)
             <%
             } else if (votes.get(j).getVote() == 2)//kalo votenya DISLIKE
             {
             %>
-            <a href="VoteServlet?c=c&vote=1&idvote=<%=votes.get(j).getIdVote()%>&post=<%=temp.getIdPost()%>">LIKE</a>(<%=like%>)|DISLIKE(you already choose this)(<%=dislike%>)
+            <a href="VoteServlet?type=<%=temp.getPostType()%>&c=c&vote=1&idvote=<%=votes.get(j).getIdVote()%>&post=<%=temp.getIdPost()%>">LIKE</a>(<%=like%>)|DISLIKE(you already choose this)(<%=dislike%>)
             <%
                     }
 
