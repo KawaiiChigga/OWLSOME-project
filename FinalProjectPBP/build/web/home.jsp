@@ -91,9 +91,8 @@
         </form>
             
 
-        <button id="button1"> 
-            Post
-        </button>
+        <button style=" width: 100%;height: 40px; background-color:#193149; color:whitesmoke; font-family:Trebuchet MS; font-size:20px;" id="button1">POST</button>
+        
         </div>    
         <%            if (request.getParameter("type") == null) {
 
