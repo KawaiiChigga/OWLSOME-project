@@ -17,7 +17,18 @@
     <body>
 
         <%@ include file="header.jsp" %>
-        <%            if (request.getParameter("error") != null) {
+        <%!DataAkses da;
+            ArrayList<Users> user;
+            Users temp;
+            String name;
+        %>
+        <%            String userProfile = "";
+            if (request.getParameter("username") != null) {
+
+                userProfile = request.getParameter("username");
+            }
+            name = (String) session.getAttribute("username");
+            if (request.getParameter("error") != null) {
                 int error = Integer.parseInt(request.getParameter("error"));
                 if (error == 1) {
         %><h2>Wrong Old Password or New Password didnt match!</h2><%
@@ -25,11 +36,16 @@
         %><h2>Username Taken!</h2><%
                 }
             }
-            String name = (String) session.getAttribute("username");
-            if (name != null) {
-                DataAkses da = new DataAkses();
-                ArrayList<Users> user = da.getUser(name);
-                Users temp = user.get(0);
+            if (!userProfile.equals("")) {
+                da = new DataAkses();
+                user = da.getUser(userProfile);
+                temp = user.get(0);
+            } else if (name != null) {
+                da = new DataAkses();
+                user = da.getUser(name);
+                temp = user.get(0);
+            }
+
         %>
 
         <table style="font-family:Trebuchet MS; font-size:20px; color: #193149">
@@ -57,12 +73,21 @@
             </tr>
 
             <tr>
-                <td><a href="editprofile.jsp"><input type="button" value="Edit Profile"/></a> </td>
+
+                <%
+                    System.out.println("user profile : " + userProfile);
+                    System.out.println("user  : " + name);
+                    if (userProfile.equals(name)) {
+                %>
+
+                <td><a href="editprofile.jsp"><input type="button" value="Edit Profile"/></a></td>
+                        <%
+                            }%>
             </tr>
         </table>
 
 
-        <%}%>
+
         <%@ include file="footer.jsp" %>
     </body>
 </html>
