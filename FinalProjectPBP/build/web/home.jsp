@@ -190,14 +190,13 @@
                 ArrayList<Comments> comments = da.getComment(temp.getIdPost());
 
                 out.print("<span style='font-family:Trebuchet MS; color: #193149'><br><hr>");
-                out.print("<p style='font-size:20px;'>" + temp.getTitle() + "</p>");
-                out.print("<a href='profile.jsp?username="+usrname+"'><p style='font-size:14px;'>" + nama + "</p></a>");
+                out.print("<h2>" + nama + "</h2>");
                 if (usrname.equals(username)) {
                     %><a href="editpost.jsp">edit</a><br><a href="deletepost.jsp">delete</a><%
                 }
-                out.print("<p style='font-size:11px;'> Post Type: " + temp.getPostType() + " | Date: " + temp.getPostDate() + "</p>");
-                out.print("<p style='font-size:14px;'> " + temp.getContent() + "</p><br><br></span>");
-                
+                out.print("<p style='font-size:20px;'>===== " + temp.getTitle() + " =====</p>");
+                out.print("<p style='font-size:14px;'> " + temp.getContent() + "</p>");
+                out.print("<p style='font-size:11px;'> Post Type: " + temp.getPostType() + " | Date: " + temp.getPostDate() + "</p><br><br></span>");
 
                 boolean ada = false;
                 ArrayList<Votes> votes = da.getVotePost(temp.getIdPost());
@@ -221,17 +220,17 @@
                 if (ada == false) {
         %>
         <span style='font-family:Trebuchet MS; font-size:16px; color: #193149'>
-            <a href="VoteServlet?type=<%=type%>&vote=1&post=<%=temp.getIdPost()%>"><p style='font-family:Trebuchet MS; color: #193149; font-size:11px;'> LIKE</a>(<%=like%>)| <a href="VoteServlet?type=<%=type%>&vote=2&post=<%=temp.getIdPost()%>">DISLIKE</p></a>(<%=dislike%>)
+            <a href="VoteServlet?type=<%=type%>&vote=1&post=<%=temp.getIdPost()%>">LIKE</a>(<%=like%>)<a href="VoteServlet?type=<%=type%>&vote=2&post=<%=temp.getIdPost()%>">|DISLIKE</a>(<%=dislike%>)
             <%
             } else if (votes.get(j).getVote() == 1)//kalo votenya LIKE
             {
             %>
-            <p style='font-family:Trebuchet MS; color: #193149; font-size:11px;'> LIKE(<%=like%>)| <a href="VoteServlet?type=<%=type%>&vote=2&idvote=<%=votes.get(j).getIdVote()%>&post=<%=temp.getIdPost()%>">DISLIKE</a>(<%=dislike%>)</p>
+            LIKE (you already choose this)(<%=like%>)<a href="VoteServlet?type=<%=type%>&vote=2&idvote=<%=votes.get(j).getIdVote()%>&post=<%=temp.getIdPost()%>">|DISLIKE</a>(<%=dislike%>)
             <%
             } else if (votes.get(j).getVote() == 2)//kalo votenya DISLIKE
             {
             %>
-            <a href="VoteServlet?type=<%=type%>&vote=1&idvote=<%=votes.get(j).getIdVote()%>&post=<%=temp.getIdPost()%>"><p style='font-family:Trebuchet MS; color: #193149; font-size:11px;'>LIKE</a>(<%=like%>)| DISLIKE(<%=dislike%>)</p>
+            <a href="VoteServlet?type=<%=type%>&vote=1&idvote=<%=votes.get(j).getIdVote()%>&post=<%=temp.getIdPost()%>">LIKE</a>(<%=like%>)|DISLIKE(you already choose this)(<%=dislike%>)
             <%
                 }
 

@@ -163,9 +163,7 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
  } else {
       out.write("\r\n");
       out.write("                    <li></li>\r\n");
-      out.write("                    <li><a style=\"font-family:Trebuchet MS; font-size:20px\" href=\"profile.jsp?username=");
-      out.print(username);
-      out.write("\">@");
+      out.write("                    <li><a style=\"font-family:Trebuchet MS; font-size:20px\" href=\"profile.jsp\">@");
       out.print(username);
       out.write("</a></li>\r\n");
       out.write("                     <li><hr></li>\r\n");
@@ -197,57 +195,57 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("        <div style=\"margin-bottom :10px;\">\r\n");
-      out.write("            <form action=\"PostServlet\" id=\"postform\" method=\"post\">\r\n");
-      out.write("                <table>\r\n");
-      out.write("                    <tr>\r\n");
-      out.write("                        <td><p style=\"font-family:Trebuchet MS; font-size:22px; color: #193149\">\r\n");
-      out.write("                                <b>TITLE</b> </p>\r\n");
-      out.write("                        </td>\r\n");
-      out.write("                        <td><input type=\"text\" name=\"title\" required \r\n");
-      out.write("                                   style=\"font-size: 22px; margin-left: 10px\">\r\n");
-      out.write("                        </td>\r\n");
+      out.write("        <form action=\"PostServlet\" id=\"postform\" method=\"post\">\r\n");
+      out.write("            <table>\r\n");
+      out.write("                <tr>\r\n");
+      out.write("                    <td><p style=\"font-family:Trebuchet MS; font-size:22px; color: #193149\">\r\n");
+      out.write("                            <b>TITLE</b> </p>\r\n");
+      out.write("                    </td>\r\n");
+      out.write("                    <td><input type=\"text\" name=\"title\" required \r\n");
+      out.write("                               style=\"font-size: 22px; margin-left: 10px\">\r\n");
+      out.write("                    </td>\r\n");
       out.write("\r\n");
-      out.write("                    </tr>\r\n");
-      out.write("                    <tr>\r\n");
-      out.write("                        <td><p style=\"font-family:Trebuchet MS; font-size:22px; color: #193149\">\r\n");
-      out.write("                                <b>CONTENT</b> </p>\r\n");
-      out.write("                        </td>\r\n");
-      out.write("                        <td>\r\n");
-      out.write("                            <textarea rows=\"5\" cols=\"100\" name=\"isipost\" form=\"postform\" required style=\"margin-left: 10px\"></textarea>\r\n");
-      out.write("                        </td>\r\n");
-      out.write("                    </tr>\r\n");
+      out.write("                </tr>\r\n");
+      out.write("                <tr>\r\n");
+      out.write("                    <td><p style=\"font-family:Trebuchet MS; font-size:22px; color: #193149\">\r\n");
+      out.write("                            <b>CONTENT</b> </p>\r\n");
+      out.write("                    </td>\r\n");
+      out.write("                    <td>\r\n");
+      out.write("                        <textarea rows=\"5\" cols=\"100\" name=\"isipost\" form=\"postform\" required style=\"margin-left: 10px\"></textarea>\r\n");
+      out.write("                    </td>\r\n");
+      out.write("                </tr>\r\n");
       out.write("\r\n");
-      out.write("                    <tr>\r\n");
-      out.write("                        <td><p style=\"font-family:Trebuchet MS; font-size:22px; color: #193149\">\r\n");
-      out.write("                                <b>TYPE</b> </p>\r\n");
-      out.write("                        </td>\r\n");
+      out.write("                <tr>\r\n");
+      out.write("                    <td><p style=\"font-family:Trebuchet MS; font-size:22px; color: #193149\">\r\n");
+      out.write("                            <b>TYPE</b> </p>\r\n");
+      out.write("                    </td>\r\n");
       out.write("\r\n");
-      out.write("                        <td>\r\n");
-      out.write("                            <select name=\"type\">\r\n");
-      out.write("                                <option value=\"games\" style=\"font-family:Trebuchet MS; font-size:14px\">Games</option>\r\n");
-      out.write("                                <option value=\"education\" style=\"font-family:Trebuchet MS; font-size:14px\">Education</option>\r\n");
-      out.write("                                <option value=\"lifestyle\" style=\"font-family:Trebuchet MS; font-size:14px\">Lifestyle</option>\r\n");
-      out.write("                                <option value=\"sport\" style=\"font-family:Trebuchet MS; font-size:14px\">Sport</option>\r\n");
-      out.write("                                <option value=\"coding\" style=\"font-family:Trebuchet MS; font-size:14px\">Coding</option>\r\n");
-      out.write("                                <option value=\"traveling\" style=\"font-family:Trebuchet MS; font-size:14px\">Traveling</option>\r\n");
-      out.write("                                <option value=\"economics\" style=\"font-family:Trebuchet MS; font-size:14px\">Economics</option>\r\n");
-      out.write("                                <option value=\"movies\" style=\"font-family:Trebuchet MS; font-size:14px\">Movies</option>\r\n");
-      out.write("                                <option value=\"otomotif\" style=\"font-family:Trebuchet MS; font-size:14px\">Otomotif</option>\r\n");
-      out.write("                                <option value=\"politics\" style=\"font-family:Trebuchet MS; font-size:14px\">Politics</option>\r\n");
-      out.write("                            </select>\r\n");
-      out.write("                        </td>\r\n");
+      out.write("                    <td>\r\n");
+      out.write("                        <select name=\"type\">\r\n");
+      out.write("                            <option value=\"games\" style=\"font-family:Trebuchet MS; font-size:14px\">Games</option>\r\n");
+      out.write("                            <option value=\"education\" style=\"font-family:Trebuchet MS; font-size:14px\">Education</option>\r\n");
+      out.write("                            <option value=\"lifestyle\" style=\"font-family:Trebuchet MS; font-size:14px\">Lifestyle</option>\r\n");
+      out.write("                            <option value=\"sport\" style=\"font-family:Trebuchet MS; font-size:14px\">Sport</option>\r\n");
+      out.write("                            <option value=\"coding\" style=\"font-family:Trebuchet MS; font-size:14px\">Coding</option>\r\n");
+      out.write("                            <option value=\"traveling\" style=\"font-family:Trebuchet MS; font-size:14px\">Traveling</option>\r\n");
+      out.write("                            <option value=\"economics\" style=\"font-family:Trebuchet MS; font-size:14px\">Economics</option>\r\n");
+      out.write("                            <option value=\"movies\" style=\"font-family:Trebuchet MS; font-size:14px\">Movies</option>\r\n");
+      out.write("                            <option value=\"otomotif\" style=\"font-family:Trebuchet MS; font-size:14px\">Otomotif</option>\r\n");
+      out.write("                            <option value=\"politics\" style=\"font-family:Trebuchet MS; font-size:14px\">Politics</option>\r\n");
+      out.write("                        </select>\r\n");
+      out.write("                    </td>\r\n");
+      out.write("                    \r\n");
+      out.write("                    <td>\r\n");
+      out.write("                        <input style=\" background-color:#193149; color:white; font-family:tahoma; font-size:18px; margin-left: 10px\" value=\"Upload\" type=\"submit\">\r\n");
+      out.write("                    </td>\r\n");
+      out.write("                </tr>\r\n");
       out.write("\r\n");
-      out.write("                        <td>\r\n");
-      out.write("                            <input style=\" background-color:#193149; color:white; font-family:tahoma; font-size:18px; margin-left: 10px\" value=\"Upload\" type=\"submit\">\r\n");
-      out.write("                        </td>\r\n");
-      out.write("                    </tr>\r\n");
+      out.write("            </table>\r\n");
+      out.write("        </form>\r\n");
+      out.write("            \r\n");
       out.write("\r\n");
-      out.write("                </table>\r\n");
-      out.write("            </form>\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("            <button style=\" width: 100%;height: 40px; background-color:#193149; color:whitesmoke; font-family:Trebuchet MS; font-size:20px;\" id=\"button1\">POST</button>\r\n");
-      out.write("\r\n");
+      out.write("        <button style=\" width: 100%;height: 40px; background-color:#193149; color:whitesmoke; font-family:Trebuchet MS; font-size:20px;\" id=\"button1\">POST</button>\r\n");
+      out.write("        \r\n");
       out.write("        </div>    \r\n");
       out.write("        ");
             if (request.getParameter("type") == null) {
@@ -318,15 +316,15 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <h1><b>POLITICS</b></h1>\r\n");
       out.write("            </div>\r\n");
       out.write("        </a>\r\n");
-      out.write("        <!--        <h1><a style=\"font-family:Trebuchet MS; font-size:26px; color: #193149\" href=\"home.jsp?type=education\"><b>EDUCATION</b></a></h1>\r\n");
-      out.write("                <h1><a style=\"font-family:Trebuchet MS; font-size:26px; color: #193149\" href=\"home.jsp?type=lifestyle\"><b>LIFESTYLE</b></a></h1>\r\n");
-      out.write("                <h1><a style=\"font-family:Trebuchet MS; font-size:26px; color: #193149\" href=\"home.jsp?type=sport\"><b>SPORT</b></a></h1>\r\n");
-      out.write("                <h1><a style=\"font-family:Trebuchet MS; font-size:26px; color: #193149\" href=\"home.jsp?type=coding\"><b>CODING</b></a></h1>\r\n");
-      out.write("                <h1><a style=\"font-family:Trebuchet MS; font-size:26px; color: #193149\" href=\"home.jsp?type=traveling\"><b>TRAVELING</b></a></h1>\r\n");
-      out.write("                <h1><a style=\"font-family:Trebuchet MS; font-size:26px; color: #193149\" href=\"home.jsp?type=economics\"><b>ECONOMICS</b></a></h1>\r\n");
-      out.write("                <h1><a style=\"font-family:Trebuchet MS; font-size:26px; color: #193149\" href=\"home.jsp?type=movies\"><b>MOVIES</b></a></h1>\r\n");
-      out.write("                <h1><a style=\"font-family:Trebuchet MS; font-size:26px; color: #193149\" href=\"home.jsp?type=otomotif\"><b>OTOMOTIF</b></a></h1>\r\n");
-      out.write("                <h1><a style=\"font-family:Trebuchet MS; font-size:26px; color: #193149\" href=\"home.jsp?type=politics\"><b>POLITICS</b></a></h1>-->\r\n");
+      out.write("<!--        <h1><a style=\"font-family:Trebuchet MS; font-size:26px; color: #193149\" href=\"home.jsp?type=education\"><b>EDUCATION</b></a></h1>\r\n");
+      out.write("        <h1><a style=\"font-family:Trebuchet MS; font-size:26px; color: #193149\" href=\"home.jsp?type=lifestyle\"><b>LIFESTYLE</b></a></h1>\r\n");
+      out.write("        <h1><a style=\"font-family:Trebuchet MS; font-size:26px; color: #193149\" href=\"home.jsp?type=sport\"><b>SPORT</b></a></h1>\r\n");
+      out.write("        <h1><a style=\"font-family:Trebuchet MS; font-size:26px; color: #193149\" href=\"home.jsp?type=coding\"><b>CODING</b></a></h1>\r\n");
+      out.write("        <h1><a style=\"font-family:Trebuchet MS; font-size:26px; color: #193149\" href=\"home.jsp?type=traveling\"><b>TRAVELING</b></a></h1>\r\n");
+      out.write("        <h1><a style=\"font-family:Trebuchet MS; font-size:26px; color: #193149\" href=\"home.jsp?type=economics\"><b>ECONOMICS</b></a></h1>\r\n");
+      out.write("        <h1><a style=\"font-family:Trebuchet MS; font-size:26px; color: #193149\" href=\"home.jsp?type=movies\"><b>MOVIES</b></a></h1>\r\n");
+      out.write("        <h1><a style=\"font-family:Trebuchet MS; font-size:26px; color: #193149\" href=\"home.jsp?type=otomotif\"><b>OTOMOTIF</b></a></h1>\r\n");
+      out.write("        <h1><a style=\"font-family:Trebuchet MS; font-size:26px; color: #193149\" href=\"home.jsp?type=politics\"><b>POLITICS</b></a></h1>-->\r\n");
       out.write("        ");
         } else {
             String type = request.getParameter("type");
@@ -346,20 +344,13 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
             for (int i = 0; i < data.size(); i++) {
                 Posts temp = data.get(i);
                 String nama = da.getUser(temp.getUsers().getIdUser()).get(0).getName();
-                String usrname = da.getUser(temp.getUsers().getIdUser()).get(0).getUsername();
                 ArrayList<Comments> comments = da.getComment(temp.getIdPost());
 
                 out.print("<span style='font-family:Trebuchet MS; color: #193149'><br><hr>");
-                out.print("<p style='font-size:20px;'>" + temp.getTitle() + "</p>");
-                out.print("<a href='profile.jsp?username="+usrname+"'><p style='font-size:14px;'>" + nama + "</p></a>");
-                if (usrname.equals(username)) {
-                    
-      out.write("<a href=\"editpost.jsp\">edit</a><br><a href=\"deletepost.jsp\">delete</a>");
-
-                }
-                out.print("<p style='font-size:11px;'> Post Type: " + temp.getPostType() + " | Date: " + temp.getPostDate() + "</p>");
-                out.print("<p style='font-size:14px;'> " + temp.getContent() + "</p><br><br></span>");
-                
+                out.print("<h2>" + nama + "</h2>");
+                out.print("<p style='font-size:20px;'>===== " + temp.getTitle() + " =====</p>");
+                out.print("<p style='font-size:14px;'> " + temp.getContent() + "</p>");
+                out.print("<p style='font-size:11px;'> Post Type: " + temp.getPostType() + " | Date: " + temp.getPostDate() + "</p><br><br></span>");
 
                 boolean ada = false;
                 ArrayList<Votes> votes = da.getVotePost(temp.getIdPost());
@@ -388,13 +379,13 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.print(type);
       out.write("&vote=1&post=");
       out.print(temp.getIdPost());
-      out.write("\"><p style='font-family:Trebuchet MS; color: #193149; font-size:11px;'> LIKE</a>(");
+      out.write("\">LIKE</a>(");
       out.print(like);
-      out.write(")| <a href=\"VoteServlet?type=");
+      out.write(")<a href=\"VoteServlet?type=");
       out.print(type);
       out.write("&vote=2&post=");
       out.print(temp.getIdPost());
-      out.write("\">DISLIKE</p></a>(");
+      out.write("\">|DISLIKE</a>(");
       out.print(dislike);
       out.write(")\r\n");
       out.write("            ");
@@ -403,17 +394,17 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
             {
             
       out.write("\r\n");
-      out.write("            <p style='font-family:Trebuchet MS; color: #193149; font-size:11px;'> LIKE(");
+      out.write("            LIKE (you already choose this)(");
       out.print(like);
-      out.write(")| <a href=\"VoteServlet?type=");
+      out.write(")<a href=\"VoteServlet?type=");
       out.print(type);
       out.write("&vote=2&idvote=");
       out.print(votes.get(j).getIdVote());
       out.write("&post=");
       out.print(temp.getIdPost());
-      out.write("\">DISLIKE</a>(");
+      out.write("\">|DISLIKE</a>(");
       out.print(dislike);
-      out.write(")</p>\r\n");
+      out.write(")\r\n");
       out.write("            ");
 
             } else if (votes.get(j).getVote() == 2)//kalo votenya DISLIKE
@@ -426,11 +417,11 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.print(votes.get(j).getIdVote());
       out.write("&post=");
       out.print(temp.getIdPost());
-      out.write("\"><p style='font-family:Trebuchet MS; color: #193149; font-size:11px;'>LIKE</a>(");
+      out.write("\">LIKE</a>(");
       out.print(like);
-      out.write(")| DISLIKE(");
+      out.write(")|DISLIKE(you already choose this)(");
       out.print(dislike);
-      out.write(")</p>\r\n");
+      out.write(")\r\n");
       out.write("            ");
 
                 }

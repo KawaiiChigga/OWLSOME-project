@@ -79,7 +79,7 @@
                     <li><a style="font-family:Trebuchet MS; font-size:20px" href="register.jsp">REGISTER</a></li>
                         <% } else {%>
                     <li></li>
-                    <li><a style="font-family:Trebuchet MS; font-size:20px" href="profile.jsp?username=<%=username%>">@<%=username%></a></li>
+                    <li><a style="font-family:Trebuchet MS; font-size:20px" href="profile.jsp">@<%=username%></a></li>
                      <li><hr></li>
                     <li><a style="font-family:Trebuchet MS; font-size:20px" href="LogoutServlet">LOGOUT</a></li>
 
