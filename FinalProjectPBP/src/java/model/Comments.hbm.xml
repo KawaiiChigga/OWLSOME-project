@@ -17,6 +17,9 @@
         <property name="content" type="string">
             <column name="content" length="65535" not-null="true" />
         </property>
+               <property name="status" type="string">
+            <column name="status" length="65535" not-null="true" />
+        </property>
         <property name="commentDate" type="timestamp">
             <column name="comment_date" length="19" not-null="true" />
         </property>

@@ -73,7 +73,7 @@ public class CommentServlet extends HttpServlet {
             DataAkses da = new DataAkses();
             ArrayList<Users> user = da.getUser(username);
             ArrayList<Posts> post = da.getPost(idpost);
-            Comments temp = new Comments(post.get(0), user.get(0), isicomment, null);
+            Comments temp = new Comments(post.get(0), user.get(0), isicomment,null, null);
 
             if (da.insertComment(temp)) {
                 response.sendRedirect("comment.jsp?post="+idpost);
