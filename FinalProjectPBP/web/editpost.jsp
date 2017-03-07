@@ -10,7 +10,8 @@
 
     <body>
         <%@ include file="header.jsp" %>
-            <form action="PostServlet" id="postform" method="post">
+        <%String nama = request.getParameter("");%>
+            <form action="PostServlet?post=<%%>" id="postform" method="post">
                 <table>
                     <tr>
                         <td><p style="font-family:Trebuchet MS; font-size:22px; color: #193149">
