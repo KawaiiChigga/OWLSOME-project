@@ -20,10 +20,20 @@
               
             String status = request.getParameter("status");
             
+            
+            String type;
+            if(request.getParameter("type")!=null){
+                type  = request.getParameter("type");
+            }
+            else
+            {
+                type="";
+            }
             int idpost;
             if(request.getParameter("post")!=null){
                 idpost = Integer.parseInt(request.getParameter("post"));
             }
+            
             else
             {
                 idpost = -1;
@@ -46,7 +56,7 @@
             }
         %>
         
-        <form action="LoginServlet?post=<%=idpost%>" method="Post">
+        <form action="LoginServlet?post=<%=idpost%>&type=<%=type%>" method="Post">
             <table>
                 <tr>
                     <td style="font-family:Trebuchet MS; font-size:20px; color: #193149"><b>Username</b></td>

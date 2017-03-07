@@ -375,11 +375,15 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
         
       out.write("\r\n");
       out.write("        <span style='font-family:Trebuchet MS; font-size:16px; color: #193149'>\r\n");
-      out.write("            <a href=\"VoteServlet?vote=1&post=");
+      out.write("            <a href=\"VoteServlet?type=");
+      out.print(type);
+      out.write("&vote=1&post=");
       out.print(temp.getIdPost());
       out.write("\">LIKE</a>(");
       out.print(like);
-      out.write(")<a href=\"VoteServlet?vote=2&post=");
+      out.write(")<a href=\"VoteServlet?type=");
+      out.print(type);
+      out.write("&vote=2&post=");
       out.print(temp.getIdPost());
       out.write("\">|DISLIKE</a>(");
       out.print(dislike);
@@ -392,7 +396,9 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("            LIKE (you already choose this)(");
       out.print(like);
-      out.write(")<a href=\"VoteServlet?vote=2&idvote=");
+      out.write(")<a href=\"VoteServlet?type=");
+      out.print(type);
+      out.write("&vote=2&idvote=");
       out.print(votes.get(j).getIdVote());
       out.write("&post=");
       out.print(temp.getIdPost());
@@ -405,7 +411,9 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
             {
             
       out.write("\r\n");
-      out.write("            <a href=\"VoteServlet?vote=1&idvote=");
+      out.write("            <a href=\"VoteServlet?type=");
+      out.print(type);
+      out.write("&vote=1&idvote=");
       out.print(votes.get(j).getIdVote());
       out.write("&post=");
       out.print(temp.getIdPost());

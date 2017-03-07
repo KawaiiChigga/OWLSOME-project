@@ -53,16 +53,14 @@ public class VoteServlet extends HttpServlet {
         String username = (String) session.getAttribute("username");
         Integer idpost = Integer.parseInt(request.getParameter("post"));
         String c = request.getParameter("c");
+        String type = request.getParameter("type");
         if (username == null) {
-            if(c==null)
-            {
-                 response.sendRedirect("login.jsp");
+            if (c == null) {
+                response.sendRedirect("login.jsp?type="+type);
+            } else {
+                response.sendRedirect("login.jsp?post=" + idpost);
             }
-            else
-            {
-                 response.sendRedirect("login.jsp?post=" + idpost);
-            }
-           
+
         } else {
             boolean pernah = false;
             Integer idvote = 0;
@@ -85,19 +83,17 @@ public class VoteServlet extends HttpServlet {
             if (idcomment == 0) {
 
                 post = da.getPost(idpost);
-            }
-            else
-            {
+            } else {
                 comment = da.getCommentt(idcomment);
             }
 
             if (pernah) {
                 if (da.updateVote(idvote, vote)) {
-                    if (idcomment != 0) {
+                    if (idcomment != 0 || c != null) {
                         response.sendRedirect("comment.jsp?post=" + idpost);
                     } else {
 
-                        response.sendRedirect("home.jsp");
+                        response.sendRedirect("home.jsp?type=" + type);
                     }
 
                 } else {
