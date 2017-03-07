@@ -42,57 +42,57 @@
 
 
         <div style="margin-bottom :10px;">
-        <form action="PostServlet" id="postform" method="post">
-            <table>
-                <tr>
-                    <td><p style="font-family:Trebuchet MS; font-size:22px; color: #193149">
-                            <b>TITLE</b> </p>
-                    </td>
-                    <td><input type="text" name="title" required 
-                               style="font-size: 22px; margin-left: 10px">
-                    </td>
+            <form action="PostServlet" id="postform" method="post">
+                <table>
+                    <tr>
+                        <td><p style="font-family:Trebuchet MS; font-size:22px; color: #193149">
+                                <b>TITLE</b> </p>
+                        </td>
+                        <td><input type="text" name="title" required 
+                                   style="font-size: 22px; margin-left: 10px">
+                        </td>
 
-                </tr>
-                <tr>
-                    <td><p style="font-family:Trebuchet MS; font-size:22px; color: #193149">
-                            <b>CONTENT</b> </p>
-                    </td>
-                    <td>
-                        <textarea rows="5" cols="100" name="isipost" form="postform" required style="margin-left: 10px"></textarea>
-                    </td>
-                </tr>
+                    </tr>
+                    <tr>
+                        <td><p style="font-family:Trebuchet MS; font-size:22px; color: #193149">
+                                <b>CONTENT</b> </p>
+                        </td>
+                        <td>
+                            <textarea rows="5" cols="100" name="isipost" form="postform" required style="margin-left: 10px"></textarea>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td><p style="font-family:Trebuchet MS; font-size:22px; color: #193149">
-                            <b>TYPE</b> </p>
-                    </td>
+                    <tr>
+                        <td><p style="font-family:Trebuchet MS; font-size:22px; color: #193149">
+                                <b>TYPE</b> </p>
+                        </td>
 
-                    <td>
-                        <select name="type">
-                            <option value="games" style="font-family:Trebuchet MS; font-size:14px">Games</option>
-                            <option value="education" style="font-family:Trebuchet MS; font-size:14px">Education</option>
-                            <option value="lifestyle" style="font-family:Trebuchet MS; font-size:14px">Lifestyle</option>
-                            <option value="sport" style="font-family:Trebuchet MS; font-size:14px">Sport</option>
-                            <option value="coding" style="font-family:Trebuchet MS; font-size:14px">Coding</option>
-                            <option value="traveling" style="font-family:Trebuchet MS; font-size:14px">Traveling</option>
-                            <option value="economics" style="font-family:Trebuchet MS; font-size:14px">Economics</option>
-                            <option value="movies" style="font-family:Trebuchet MS; font-size:14px">Movies</option>
-                            <option value="otomotif" style="font-family:Trebuchet MS; font-size:14px">Otomotif</option>
-                            <option value="politics" style="font-family:Trebuchet MS; font-size:14px">Politics</option>
-                        </select>
-                    </td>
-                    
-                    <td>
-                        <input style=" background-color:#193149; color:white; font-family:tahoma; font-size:18px; margin-left: 10px" value="Upload" type="submit">
-                    </td>
-                </tr>
+                        <td>
+                            <select name="type">
+                                <option value="games" style="font-family:Trebuchet MS; font-size:14px">Games</option>
+                                <option value="education" style="font-family:Trebuchet MS; font-size:14px">Education</option>
+                                <option value="lifestyle" style="font-family:Trebuchet MS; font-size:14px">Lifestyle</option>
+                                <option value="sport" style="font-family:Trebuchet MS; font-size:14px">Sport</option>
+                                <option value="coding" style="font-family:Trebuchet MS; font-size:14px">Coding</option>
+                                <option value="traveling" style="font-family:Trebuchet MS; font-size:14px">Traveling</option>
+                                <option value="economics" style="font-family:Trebuchet MS; font-size:14px">Economics</option>
+                                <option value="movies" style="font-family:Trebuchet MS; font-size:14px">Movies</option>
+                                <option value="otomotif" style="font-family:Trebuchet MS; font-size:14px">Otomotif</option>
+                                <option value="politics" style="font-family:Trebuchet MS; font-size:14px">Politics</option>
+                            </select>
+                        </td>
 
-            </table>
-        </form>
-            
+                        <td>
+                            <input style=" background-color:#193149; color:white; font-family:tahoma; font-size:18px; margin-left: 10px" value="Upload" type="submit">
+                        </td>
+                    </tr>
 
-        <button style=" width: 100%;height: 40px; background-color:#193149; color:whitesmoke; font-family:Trebuchet MS; font-size:20px;" id="button1">POST</button>
-        
+                </table>
+            </form>
+
+
+            <button style=" width: 100%;height: 40px; background-color:#193149; color:whitesmoke; font-family:Trebuchet MS; font-size:20px;" id="button1">POST</button>
+
         </div>    
         <%            if (request.getParameter("type") == null) {
 
@@ -161,15 +161,15 @@
                 <h1><b>POLITICS</b></h1>
             </div>
         </a>
-<!--        <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=education"><b>EDUCATION</b></a></h1>
-        <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=lifestyle"><b>LIFESTYLE</b></a></h1>
-        <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=sport"><b>SPORT</b></a></h1>
-        <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=coding"><b>CODING</b></a></h1>
-        <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=traveling"><b>TRAVELING</b></a></h1>
-        <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=economics"><b>ECONOMICS</b></a></h1>
-        <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=movies"><b>MOVIES</b></a></h1>
-        <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=otomotif"><b>OTOMOTIF</b></a></h1>
-        <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=politics"><b>POLITICS</b></a></h1>-->
+        <!--        <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=education"><b>EDUCATION</b></a></h1>
+                <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=lifestyle"><b>LIFESTYLE</b></a></h1>
+                <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=sport"><b>SPORT</b></a></h1>
+                <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=coding"><b>CODING</b></a></h1>
+                <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=traveling"><b>TRAVELING</b></a></h1>
+                <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=economics"><b>ECONOMICS</b></a></h1>
+                <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=movies"><b>MOVIES</b></a></h1>
+                <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=otomotif"><b>OTOMOTIF</b></a></h1>
+                <h1><a style="font-family:Trebuchet MS; font-size:26px; color: #193149" href="home.jsp?type=politics"><b>POLITICS</b></a></h1>-->
         <%        } else {
             String type = request.getParameter("type");
             DataAkses da = new DataAkses();
@@ -186,10 +186,14 @@
             for (int i = 0; i < data.size(); i++) {
                 Posts temp = data.get(i);
                 String nama = da.getUser(temp.getUsers().getIdUser()).get(0).getName();
+                String usrname = da.getUser(temp.getUsers().getIdUser()).get(0).getUsername();
                 ArrayList<Comments> comments = da.getComment(temp.getIdPost());
 
                 out.print("<span style='font-family:Trebuchet MS; color: #193149'><br><hr>");
                 out.print("<h2>" + nama + "</h2>");
+                if (usrname.equals(username)) {
+                    %><a href="editpost.jsp">edit</a><br><a href="deletepost.jsp">delete</a><%
+                }
                 out.print("<p style='font-size:20px;'>===== " + temp.getTitle() + " =====</p>");
                 out.print("<p style='font-size:14px;'> " + temp.getContent() + "</p>");
                 out.print("<p style='font-size:11px;'> Post Type: " + temp.getPostType() + " | Date: " + temp.getPostDate() + "</p><br><br></span>");
